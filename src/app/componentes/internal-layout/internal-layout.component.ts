@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Urls } from '../../_common/routes';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-internal-layout',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InternalLayoutComponent implements OnInit {
 
-  constructor() { }
+  urls = Urls;
+  
+  constructor(
+  ) { 
+    this.urls.DETALLE_VUELO;
+  }
 
   ngOnInit() {
   }

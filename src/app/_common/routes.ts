@@ -1,8 +1,12 @@
 export class Urls{
-    public static PATH_BASE :string = "/app";
+    public static PATH_BASE :string = "/cibeles";
 
         public static LOGIN : string = Urls.PATH_BASE + "/login";
-        //${yourVariable}
-        public static DASHBOARD : string = Urls.PATH_BASE + "/dashboard";
-            public static USUARIOS : string = Urls.DASHBOARD + "/usuarios";
+
+        public static INDEX : string = Urls.PATH_BASE + "/index";
+
+        public static INTERNO : string = Urls.PATH_BASE + "/interno";
+            public static DETALLE_VUELO : string = Urls.INTERNO + "/detalle-vuelo";
+            public static SEARCH_RESULT : string = Urls.INTERNO + "/resultado-busqueda";
+            public static CONTACT_US : string = Urls.INTERNO + "/contactenos";
 }

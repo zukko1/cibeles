@@ -20,7 +20,7 @@ export class UserController{
     public login(user : string, pass: string){
         this.userService.login(user, pass).subscribe(
             token =>{
-                this.router.navigateByUrl(Urls.DASHBOARD);
+                this.router.navigateByUrl(Urls.INDEX);
                 this.messageService.success('Login correcto', true);
             }
         )

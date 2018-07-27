@@ -4,11 +4,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule ,Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLink, Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { Http, Response, Headers} from "@angular/http";
-//import "rxjs/add/operator/map";
 import { map } from 'rxjs/operators';
 import { Observable } from "rxjs";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -25,6 +24,10 @@ import { MatCardModule } from '@angular/material/card';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './componentes/users/users.component';
 import { MessagesComponent } from './componentes/messages/messages.component';
+import { InternalLayoutComponent } from './componentes/internal-layout/internal-layout.component';
+import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo.component';
+
+
 
 /**
   Services
@@ -48,8 +51,9 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { Ter4BtnPrincipalDirective } from './directives/ter4-btn-principal/ter4-btn-principal.directive';
 import { MatSnackBarModule } from '@angular/material';
 import { IndexComponent } from './componentes/index/index.component';
-import { InternalLayoutComponent } from './componentes/internal-layout/internal-layout.component';
-import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo.component';
+import { SearchResultComponent } from './componentes/search-result/search-result.component';
+import { SearchResultItemComponent } from './componentes/search-result-item/search-result-item.component';
+import { ContactUsComponent } from './componentes/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,10 @@ import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo
     Ter4BtnPrincipalDirective,
     IndexComponent,
     InternalLayoutComponent,
-    DetalleVueloComponent
+    DetalleVueloComponent,
+    SearchResultComponent,
+    SearchResultItemComponent,
+    ContactUsComponent
   ],
   imports: [
     HttpModule,
@@ -70,7 +77,8 @@ import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo
     RoutingModule,
     MatToolbarModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    RouterModule
   ],
   providers: [
     UsersService, 

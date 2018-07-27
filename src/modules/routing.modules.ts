@@ -5,6 +5,8 @@ import { UsersComponent } from '../app/componentes/users/users.component';
 import { IndexComponent } from '../app/componentes/index/index.component';
 import { InternalLayoutComponent } from '../app/componentes/internal-layout/internal-layout.component';
 import { DetalleVueloComponent } from '../app/componentes/detalle-vuelo/detalle-vuelo.component';
+import { SearchResultComponent } from '../app/componentes/search-result/search-result.component';
+import { ContactUsComponent } from '../app/componentes/contact-us/contact-us.component';
 
 const routes: Routes = [
     {
@@ -26,6 +28,14 @@ const routes: Routes = [
                     {                        
                         path:'detalle-vuelo',
                         component: DetalleVueloComponent,
+                    },
+                    {
+                        path:'resultado-busqueda',
+                        component: SearchResultComponent
+                    },
+                    {
+                        path:'contactenos',
+                        component: ContactUsComponent
                     }
                 ]
             }
