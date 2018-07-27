@@ -34,18 +34,20 @@ import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo
 */
 
 import { UsersService } from './_services/users/users.service';
+import { SearchBarService } from './_services/search-bar/search-bar.service';
+import { MessageService } from './_services/messages/message.service';
 
 /**
  * Controllers
  */
 
 import { UserController } from './_controllers/user.controller';
+import { SearchBarController } from './_controllers/search-bar.controller';
 
 /**
  * Configuration imports
  */
 import { RoutingModule } from '../modules/routing.modules';
-import { MessageService } from './_services/messages/message.service';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { Ter4BtnPrincipalDirective } from './directives/ter4-btn-principal/ter4-btn-principal.directive';
@@ -54,6 +56,10 @@ import { IndexComponent } from './componentes/index/index.component';
 import { SearchResultComponent } from './componentes/search-result/search-result.component';
 import { SearchResultItemComponent } from './componentes/search-result-item/search-result-item.component';
 import { ContactUsComponent } from './componentes/contact-us/contact-us.component';
+import { InternalLayoutComponent } from './componentes/internal-layout/internal-layout.component';
+import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo.component';
+import { SearchBarInternalComponent } from './componentes/search-bar-internal/search-bar-internal.component';
+import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +73,8 @@ import { ContactUsComponent } from './componentes/contact-us/contact-us.componen
     SearchResultComponent,
     SearchResultItemComponent,
     ContactUsComponent
+    SearchBarInternalComponent,
+    LayoutMenuComponent
   ],
   imports: [
     HttpModule,
@@ -85,7 +93,9 @@ import { ContactUsComponent } from './componentes/contact-us/contact-us.componen
     UserController, 
     MessageService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    SearchBarService,
+    SearchBarController
   ],
   bootstrap: [AppComponent]
 })
