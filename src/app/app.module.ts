@@ -56,8 +56,6 @@ import { IndexComponent } from './componentes/index/index.component';
 import { SearchResultComponent } from './componentes/search-result/search-result.component';
 import { SearchResultItemComponent } from './componentes/search-result-item/search-result-item.component';
 import { ContactUsComponent } from './componentes/contact-us/contact-us.component';
-import { InternalLayoutComponent } from './componentes/internal-layout/internal-layout.component';
-import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo.component';
 import { SearchBarInternalComponent } from './componentes/search-bar-internal/search-bar-internal.component';
 import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.component';
 
@@ -72,7 +70,7 @@ import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.compo
     DetalleVueloComponent,
     SearchResultComponent,
     SearchResultItemComponent,
-    ContactUsComponent
+    ContactUsComponent,
     SearchBarInternalComponent,
     LayoutMenuComponent
   ],
