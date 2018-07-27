@@ -31,18 +31,20 @@ import { MessagesComponent } from './componentes/messages/messages.component';
 */
 
 import { UsersService } from './_services/users/users.service';
+import { SearchBarService } from './_services/search-bar/search-bar.service';
+import { MessageService } from './_services/messages/message.service';
 
 /**
  * Controllers
  */
 
 import { UserController } from './_controllers/user.controller';
+import { SearchBarController } from './_controllers/search-bar.controller';
 
 /**
  * Configuration imports
  */
 import { RoutingModule } from '../modules/routing.modules';
-import { MessageService } from './_services/messages/message.service';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { Ter4BtnPrincipalDirective } from './directives/ter4-btn-principal/ter4-btn-principal.directive';
@@ -50,6 +52,8 @@ import { MatSnackBarModule } from '@angular/material';
 import { IndexComponent } from './componentes/index/index.component';
 import { InternalLayoutComponent } from './componentes/internal-layout/internal-layout.component';
 import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo.component';
+import { SearchBarInternalComponent } from './componentes/search-bar-internal/search-bar-internal.component';
+import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,9 @@ import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo
     Ter4BtnPrincipalDirective,
     IndexComponent,
     InternalLayoutComponent,
-    DetalleVueloComponent
+    DetalleVueloComponent,
+    SearchBarInternalComponent,
+    LayoutMenuComponent
   ],
   imports: [
     HttpModule,
@@ -77,7 +83,9 @@ import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo
     UserController, 
     MessageService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    SearchBarService,
+    SearchBarController
   ],
   bootstrap: [AppComponent]
 })
