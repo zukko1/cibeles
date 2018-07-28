@@ -13,7 +13,6 @@ export class InternalLayoutComponent implements OnInit {
   
   constructor(
   ) { 
-    this.urls.DETALLE_VUELO;
   }
 
   ngOnInit() {

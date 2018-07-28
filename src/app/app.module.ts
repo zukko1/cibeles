@@ -58,6 +58,7 @@ import { SearchResultItemComponent } from './componentes/search-result-item/sear
 import { ContactUsComponent } from './componentes/contact-us/contact-us.component';
 import { SearchBarInternalComponent } from './componentes/search-bar-internal/search-bar-internal.component';
 import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.component';
+import { SearchBarIndexComponent } from './componentes/search-bar-index/search-bar-index.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.compo
     SearchResultItemComponent,
     ContactUsComponent,
     SearchBarInternalComponent,
-    LayoutMenuComponent
+    LayoutMenuComponent,
+    SearchBarIndexComponent
   ],
   imports: [
     HttpModule,

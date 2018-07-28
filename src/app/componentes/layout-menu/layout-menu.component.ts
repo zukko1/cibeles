@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Urls } from '../../_common/routes';
 
 @Component({
   selector: 'layout-menu',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutMenuComponent implements OnInit {
 
+  urls = Urls;
   constructor() { }
 
   ngOnInit() {
