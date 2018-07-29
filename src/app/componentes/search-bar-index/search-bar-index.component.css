@@ -1,0 +1,9 @@
+.rooms{
+    position: absolute;
+    right: 0;
+    background: #ffffff;
+    border-radius: 7px;
+    bottom: -118px;
+    box-sizing: border-box;
+    padding: 2%;
+}

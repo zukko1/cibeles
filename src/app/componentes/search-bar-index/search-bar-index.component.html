@@ -28,12 +28,18 @@
                 <label for="fecha"></label>
                 <input type="date" name="" id="fecha" [(ngModel)] = "filters.startDate">
             </div>
-            <div>
+            <div (click)="showRooms()">
                 <label for="habitaciones"></label> 
-                <select name="" id="habitaciones"  [(ngModel)] = "filters.peopleNumber">
+                <select name="" id="habitaciones"  [(ngModel)] = "filters.peopleNumber" disabled>
+                    <option value="0" selected>Habitaciones</option>
+                </select>
+                <div class="rooms" [@show-rooms]="showrooms">
+                    <rooms-selector></rooms-selector>
+                </div>
+                <!-- <select name="" id="habitaciones"  [(ngModel)] = "filters.peopleNumber">
                     <option value="0" selected>Habitaciones</option>
                     <option value = "1">2 Adultos</option>
-                </select>
+                </select> -->
             </div>
             
             <button (click)="search()"></button>

@@ -61,6 +61,7 @@ import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.compo
 import { SearchBarIndexComponent } from './componentes/search-bar-index/search-bar-index.component';
 import { RoomsSelectorComponent } from './controls/rooms-selector/rooms-selector.component';
 import { PlanesComponent } from './componentes/planes/planes.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { PlanesComponent } from './componentes/planes/planes.component';
     LayoutMenuComponent,
     SearchBarIndexComponent,
     RoomsSelectorComponent,
-    PlanesComponent
+    PlanesComponent,
+    LoginComponent
   ],
   imports: [
     HttpModule,

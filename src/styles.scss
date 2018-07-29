@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-font-face {
+@font-face {
     font-family: 'oswald-regular';
     font-style: normal;
     font-weight: normal;
@@ -263,6 +263,7 @@ span.arrow.right-arrow {
     margin-right: 1%;
     background-color: #fff;
     border-radius: 7px;
+    position: relative;
 }
 .search-container fieldset>div>label {
     width: 20%;

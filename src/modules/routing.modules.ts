@@ -8,6 +8,7 @@ import { DetalleVueloComponent } from '../app/componentes/detalle-vuelo/detalle-
 import { SearchResultComponent } from '../app/componentes/search-result/search-result.component';
 import { ContactUsComponent } from '../app/componentes/contact-us/contact-us.component';
 import { PlanesComponent } from '../app/componentes/planes/planes.component';
+import { LoginComponent } from '../app/componentes/login/login.component';
 
 const routes: Routes = [
     {
@@ -16,7 +17,7 @@ const routes: Routes = [
         children:[
             {
                 path:'login',
-                component: UsersComponent
+                component: LoginComponent
             },
             {
                 path:'index',
@@ -43,17 +44,27 @@ const routes: Routes = [
                         component: PlanesComponent
                     }
                 ]
+            },
+            {
+                path:'interno/',
+                redirectTo:'cibeles/interno/contactenos',
+                pathMatch: 'full'
+            },
+            {
+                path:'administracion',
+                component: UsersComponent,
+                children:[
+                    {
+                        path:'planes',
+                        component: UsersComponent
+                    }
+                ]
             }
         ]
     },
     {
         path:'',
         redirectTo:'/cibeles/index',
-        pathMatch: 'full'
-    },
-    {
-        path:'cibeles/interno',
-        redirectTo:'cibeles/interno/detalle-vuelo',
         pathMatch: 'full'
     }
 ]
