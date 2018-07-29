@@ -5,36 +5,38 @@
         <fieldset>
             <div>
                 <label for="origen"></label>
-                <select name="" id="origen">
-                    <option value="default" selected>Origen</option>
+                <select name="" id="origen" [(ngModel)] = "filters.idOrigen">
+                    <option value = "0" selected>Origen</option>
+                    <option value = "1">Colombia</option>
                 </select>
             </div>
             <div>
                 <label for="tipo"></label>
-                <select name="" id="tipo">
-                    <option value="default" selected>Tipo de transporte</option>
+                <select name="" id="tipo" [(ngModel)] = "filters.transportType">
+                    <option value="0" selected>Tipo de transporte</option>
+                    <option value = "1">Aereo</option>
                 </select>
             </div>
             <div>
                 <label for="destino"></label>
-                <select name="" id="destino">
-                    <option value="default" selected>Destino favorito</option>
+                <select name="" id="destino" [(ngModel)] = "filters.idFavoriteDestiny">
+                    <option value="0" selected>Destino favorito</option>
+                    <option value = "1">Panamá</option>
                 </select>
             </div>
             <div>
                 <label for="fecha"></label>
-                <select name="" id="fecha">
-                    <option value="default" selected>Fecha</option>
-                </select>
+                <input type="date" name="" id="fecha" [(ngModel)] = "filters.startDate">
             </div>
             <div>
                 <label for="habitaciones"></label> 
-                <select name="" id="habitaciones">
-                    <option value="default" selected>Habitaciones</option>
+                <select name="" id="habitaciones"  [(ngModel)] = "filters.peopleNumber">
+                    <option value="0" selected>Habitaciones</option>
+                    <option value = "1">2 Adultos</option>
                 </select>
             </div>
             
-            <button></button>
+            <button (click)="search()"></button>
         </fieldset>
     </div>
 </div>
