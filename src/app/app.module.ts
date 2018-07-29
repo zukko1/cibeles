@@ -59,6 +59,8 @@ import { ContactUsComponent } from './componentes/contact-us/contact-us.componen
 import { SearchBarInternalComponent } from './componentes/search-bar-internal/search-bar-internal.component';
 import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.component';
 import { SearchBarIndexComponent } from './componentes/search-bar-index/search-bar-index.component';
+import { RoomsSelectorComponent } from './controls/rooms-selector/rooms-selector.component';
+import { PlanesComponent } from './componentes/planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { SearchBarIndexComponent } from './componentes/search-bar-index/search-b
     ContactUsComponent,
     SearchBarInternalComponent,
     LayoutMenuComponent,
-    SearchBarIndexComponent
+    SearchBarIndexComponent,
+    RoomsSelectorComponent,
+    PlanesComponent
   ],
   imports: [
     HttpModule,
