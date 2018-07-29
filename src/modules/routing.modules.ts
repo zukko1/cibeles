@@ -7,6 +7,7 @@ import { InternalLayoutComponent } from '../app/componentes/internal-layout/inte
 import { DetalleVueloComponent } from '../app/componentes/detalle-vuelo/detalle-vuelo.component';
 import { SearchResultComponent } from '../app/componentes/search-result/search-result.component';
 import { ContactUsComponent } from '../app/componentes/contact-us/contact-us.component';
+import { PlanesComponent } from '../app/componentes/planes/planes.component';
 
 const routes: Routes = [
     {
@@ -36,6 +37,10 @@ const routes: Routes = [
                     {
                         path:'contactenos',
                         component: ContactUsComponent
+                    },
+                    {
+                        path:'planes',
+                        component: PlanesComponent
                     }
                 ]
             }
