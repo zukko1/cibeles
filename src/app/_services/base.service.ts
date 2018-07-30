@@ -53,6 +53,16 @@ export abstract class ServiceBase<M>{
     }
     
     /**
+     * @method  GetEntityById Retorna la información de la entidad de la BD dada una dirección de entidad
+     * @param entityURI string que pide la identificación de la entidad que quiere ser consultada. 
+     * @returns Observable <E> Observable que retorna lleno con un objeto del tipo de entidad con la que fue instanciado el servicio
+     */
+    public GetEntityByIdStanard<E>(entityURI: string){
+        return this.http.get<E>(
+            entityURI
+        )
+    }
+    /**
      * @method  fillCasesList llena una lista de actuaciones sobre una lista envíada como parámetro
      * @param anotations lista vacía o no de actuaciones que se va a llenar
      * @returns void

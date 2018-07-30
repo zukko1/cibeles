@@ -15,12 +15,19 @@ export enum FormsActiom{
 }
 
 export enum EntityURI{
-    ANOTATION = "api/anotaciones",
-    CASE = "api/casos",
-    CLIENT = "api/clientes",
-    DOCUMENTS_AND_FILES = "",
-    LAWYER = "api/abogados",
-    ROLE = "",
-    SCHEDULE = "api/citas",
+    PLANS = "api/plans",
+    COSTS = "api/costs",
+    DAYS = "api/days",
+    GROUPS = "api/groups",
+    HOTELS = "api/hotels",
+    INCLUDE_SERVICS = "api/include_services",
+    MEDIA_OBJECTS = "api/media_objects",
+    PERSONS = "api/people",
+    ROLES = "api/roles",
+    SCHEDULES = "api/schedules",
+    SEASONS = "api/seasons",
+    SERVICES = "api/services",
+    TRAVEL_DATES = "api/travel_dates",
+    TRAVEL = "travels",
     USER = "api/users"
 }

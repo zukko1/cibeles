@@ -1,5 +1,5 @@
 export interface Cost{
-    idCost : number;
+    id : number;
     idSeason : number;
     idPeople : number;
     percent : number;

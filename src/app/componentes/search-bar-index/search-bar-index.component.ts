@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SearchBarFilters } from '../../_models/search-bar/searchBarFilters';
 import { SearchBarController } from '../../_controllers/search-bar.controller';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
+import { Urls } from '../../_common/routes';
 
 @Component({
   selector: 'search-bar-index',
@@ -28,12 +30,19 @@ export class SearchBarIndexComponent implements OnInit, OnDestroy {
 
   public filters : SearchBarFilters;
   public showrooms : string = 'hide';
+  public internalPage : boolean = true;
 
-  constructor(public searchBarController : SearchBarController) { 
+  constructor(
+    public searchBarController : SearchBarController,
+    public router : Router
+  ) { 
+    
   }
 
   ngOnInit() {
     this.filters = new SearchBarFilters();
+    this.internalPage = this.router.url != Urls.INDEX;
+    console.log(this.internalPage);
   }
 
   ngOnDestroy(): void {

@@ -1,7 +1,9 @@
 import { ModelBase } from "../model-base";
 
 export interface Service extends ModelBase{
-    idService : number;
+
+    id : number;
+    includeServices : Service[];
     name : string;
     description : string;
     ico : string;

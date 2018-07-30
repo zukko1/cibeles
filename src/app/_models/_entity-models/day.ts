@@ -1,7 +1,7 @@
 import { ModelBase } from "../model-base";
 
 export interface Day extends ModelBase{
-    idDay : number;
+    id : number;
     name : string;
     activities : string;
 }

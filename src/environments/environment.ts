@@ -7,5 +7,5 @@ export const environment = {
   production: false,
   offline: true,
   baseIP:"http://127.0.0.1",
-  baseAPIUrl:"/CRMDestra-Back/public/index.php/"
+  baseAPIUrl:"/cibeles-backsymfony/public/index.php/"
 };

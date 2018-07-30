@@ -1,5 +1,5 @@
 
-<div class="search-container">
+<div class="search-container" [class.search-interno]="internalPage">
     <div class="center-container">
         <h2>circuitos colombia - salidas puntuales</h2>
         <fieldset>
@@ -36,12 +36,7 @@
                 <div class="rooms" [@show-rooms]="showrooms">
                     <rooms-selector></rooms-selector>
                 </div>
-                <!-- <select name="" id="habitaciones"  [(ngModel)] = "filters.peopleNumber">
-                    <option value="0" selected>Habitaciones</option>
-                    <option value = "1">2 Adultos</option>
-                </select> -->
             </div>
-            
             <button (click)="search()"></button>
         </fieldset>
     </div>

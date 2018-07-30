@@ -36,6 +36,7 @@ import { DetalleVueloComponent } from './componentes/detalle-vuelo/detalle-vuelo
 import { UsersService } from './_services/users/users.service';
 import { SearchBarService } from './_services/search-bar/search-bar.service';
 import { MessageService } from './_services/messages/message.service';
+import { PlansService } from './_services/plans/plans.service';
 
 /**
  * Controllers
@@ -101,7 +102,8 @@ import { LoginComponent } from './componentes/login/login.component';
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     SearchBarService,
-    SearchBarController
+    SearchBarController,
+    PlansService
   ],
   bootstrap: [AppComponent]
 })
