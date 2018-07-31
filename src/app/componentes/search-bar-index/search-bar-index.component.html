@@ -2,12 +2,13 @@
 <div class="search-container" [class.search-interno]="internalPage">
     <div class="center-container">
         <h2>circuitos colombia - salidas puntuales</h2>
+                {{options.origin}}
         <fieldset>
             <div>
                 <label for="origen"></label>
                 <select name="" id="origen" [(ngModel)] = "filters.idOrigen">
                     <option value = "0" selected>Origen</option>
-                    <option value = "1">Colombia</option>
+                    <option value = "{{city['@id']}}" *ngFor="let city of options.origin">{{city.name}}</option>
                 </select>
             </div>
             <div>
@@ -24,7 +25,7 @@
                     <option value = "1">Panamá</option>
                 </select>
             </div>
-            <div>
+            <div (click)="showOuts()">
                 <label for="fecha"></label>
                 <input type="date" name="" id="fecha" [(ngModel)] = "filters.startDate">
             </div>

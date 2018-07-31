@@ -10,4 +10,5 @@ export class Urls{
             public static SEARCH_RESULT : string = Urls.INTERNO + "/resultado-busqueda";
             public static CONTACT_US : string = Urls.INTERNO + "/contactenos";
             public static PLANES : string = Urls.INTERNO + "/planes";
+            public static ABOUT : string = Urls.INTERNO + "/conocenos";
 }

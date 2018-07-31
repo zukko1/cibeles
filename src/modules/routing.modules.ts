@@ -9,6 +9,7 @@ import { SearchResultComponent } from '../app/componentes/search-result/search-r
 import { ContactUsComponent } from '../app/componentes/contact-us/contact-us.component';
 import { PlanesComponent } from '../app/componentes/planes/planes.component';
 import { LoginComponent } from '../app/componentes/login/login.component';
+import { AboutComponent } from '../app/componentes/about/about.component';
 
 const routes: Routes = [
     {
@@ -42,6 +43,10 @@ const routes: Routes = [
                     {
                         path:'planes',
                         component: PlanesComponent
+                    },
+                    {
+                        path:'conocenos',
+                        component: AboutComponent
                     }
                 ]
             },

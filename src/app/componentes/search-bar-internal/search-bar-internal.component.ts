@@ -23,6 +23,6 @@ export class SearchBarInternalComponent implements OnInit, OnDestroy {
   }
 
   search(){
-    this.searchBarController.Buscar(this.filters);
+    this.searchBarController.search(this.filters);
   }
 }

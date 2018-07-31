@@ -28,6 +28,14 @@ export enum EntityURI{
     SEASONS = "api/seasons",
     SERVICES = "api/services",
     TRAVEL_DATES = "api/travel_dates",
-    TRAVEL = "travels",
-    USER = "api/users"
+    TRAVEL = "api/travels",
+    USER = "api/users",
+    LOGIN = "login_check",
+    PLACES = "api/places",
+    TRAVEL_ROUTES = "api/travel_routes"
+}
+
+export const Transport = {
+    1 : 'Aéreo',
+    2 : 'Terrestre'
 }

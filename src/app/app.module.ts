@@ -37,6 +37,9 @@ import { UsersService } from './_services/users/users.service';
 import { SearchBarService } from './_services/search-bar/search-bar.service';
 import { MessageService } from './_services/messages/message.service';
 import { PlansService } from './_services/plans/plans.service';
+import { TravelService } from './_services/travel/travel.service';
+import { PlacesService } from './_services/places/places.service';
+import { TravelRoutesService } from './_services/travel-routes/travel-routes.service';
 
 /**
  * Controllers
@@ -63,6 +66,9 @@ import { SearchBarIndexComponent } from './componentes/search-bar-index/search-b
 import { RoomsSelectorComponent } from './controls/rooms-selector/rooms-selector.component';
 import { PlanesComponent } from './componentes/planes/planes.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { AboutComponent } from './componentes/about/about.component';
+import { SalidasComponent } from './controls/salidas/salidas.component';
+import { TravelDateService } from './_services/travel-date/travel-date.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +87,9 @@ import { LoginComponent } from './componentes/login/login.component';
     SearchBarIndexComponent,
     RoomsSelectorComponent,
     PlanesComponent,
-    LoginComponent
+    LoginComponent,
+    AboutComponent,
+    SalidasComponent
   ],
   imports: [
     HttpModule,
@@ -103,7 +111,11 @@ import { LoginComponent } from './componentes/login/login.component';
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     SearchBarService,
     SearchBarController,
-    PlansService
+    PlansService,
+    TravelService,
+    PlacesService,
+    TravelRoutesService,
+    TravelDateService
   ],
   bootstrap: [AppComponent]
 })

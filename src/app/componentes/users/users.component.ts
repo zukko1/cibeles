@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../_models/user';
 import { UserController } from '../../_controllers/user.controller';
+import { LoginDto } from '../../_models/dto/login-dto';
 
 @Component({
   selector: 'app-users',
@@ -19,7 +20,7 @@ export class UsersComponent implements OnInit {
   }
 
   login(){
-    this.userController.login(this.user.username, this.user.password);
+    this.userController.login(new LoginDto());
   }
 
 }
