@@ -4,36 +4,6 @@
         <div class="tr-resultados" *ngIf="travels">
             <div *ngFor="let travel of travels">
                 <app-search-result-item  [travel] = "travel"></app-search-result-item> 
-
-
-            <img src="../../../assets/img/cuidad-de-panama.jpg" alt="panama" title="Cuidad de Panamá">
-            <div class="tr-info-rst-bus">
-                <h2>{{travel.plan.name}}</h2>
-                <span>Durante {{getDays(travel.stardDate, travel.finishDate)}} días</span>
-                <p>
-                    <!-- <b>Plan premium:</b> 4 nohes, 5 días todo incluido<br/> -->
-                    <!-- <b>Hotel Panamá City:</b> (1 habitación) 2 personas<br/> -->
-                    <b>Fecha de llegada al hotel:</b> {{travel.stardDate.toLocaleDateString()}}<br/>
-                    <b>Fecha de salida del hotel:</b> {{travel.finishDate.toLocaleDateString()}}<br/>
-                </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta mauris vitae tellus pretium, in faucibus enim blandit. Suspendisse quis sem ut velit sagittis vulputate. Donec rhoncus efficitur mi, id efficitur sem scelerisque vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse luctus ipsum non imperdiet rutrum. Curabitur cursus est ac tortor ultricies bibendum.</p>
-                <div class="tr-cont-icons">
-                    <div class="tr-icon"><img src="../../../assets/img/wifi.svg" alt=""></div>
-                    <div class="tr-icon"><img src="../../../assets/img/cutlery.svg" alt=""></div>
-                    <div class="tr-icon"><img src="../../../assets/img/swimming-pool.svg" alt=""></div>
-                    <div class="tr-icon"><img src="../../../assets/img/room-service.svg" alt=""></div>
-                    <div class="tr-icon"><img src="../../../assets/img/martini.svg" alt=""></div>
-                </div>
-            </div>
-            <div class="tr-valores">
-                <span>DESDE</span>
-                <h3>$ {{travel.basePrice | currency}}</h3>
-                <div class="tr-estado">
-                    <span class="tr-disponible">DISPONIBLE</span>
-                    <a class="tr-btn tr-verde" href="#">RESERVAR</a>
-                </div>
-                <a class="tr-btn tr-azul" href="#">VER MÁS DETALLE</a>
-            </div>
             </div>
         </div>
     </div>

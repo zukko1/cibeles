@@ -14,4 +14,13 @@ export class SearchResultItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  getDays(date, date3){
+      return 0;
+  }
+
+  getDate(dateStr :string){
+      let date = new Date(dateStr);
+      return date.toLocaleDateString();
+  }
+
 }
