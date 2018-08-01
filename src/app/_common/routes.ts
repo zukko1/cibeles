@@ -11,4 +11,8 @@ export class Urls{
             public static CONTACT_US : string = Urls.INTERNO + "/contactenos";
             public static PLANES : string = Urls.INTERNO + "/planes";
             public static ABOUT : string = Urls.INTERNO + "/conocenos";
+        
+        public static ADMINISTRATOR : string = Urls.PATH_BASE + '/administracion';
+            
+
 }

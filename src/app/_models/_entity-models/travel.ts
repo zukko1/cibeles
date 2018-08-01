@@ -9,6 +9,8 @@ export interface Travel extends ModelBase {
     idPlan : number;
     idTravelDates : number;
     basePrice : number;
+    category : number;
+    starredTravel : boolean;
 
     hotel : Hotel;
     plan : Plan;
@@ -16,4 +18,5 @@ export interface Travel extends ModelBase {
     finishDate : Date;
 
     TravelRoute : string;
+
 }

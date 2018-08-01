@@ -17,8 +17,27 @@
       <div class="center-container">
           <h2>salidas grupales</h2>
           <ul class="salidas-items col-100">
+
+            <li class="col-25" *ngFor="let travel of groupTravels">
+                    <div class="hover-item">
+                        <div>
+                            <h3 class="city">{{travel.plan.name}}</h3>
+                            <span class="depto">{{getDays(travel.stardDate, travel.finishDate)}}</span>
+                            <h3>desde</h3>
+                            <h3 class="price">{{travel.basePrice}}</h3>
+                            <a href="#">Ver más</a>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="../../../assets/img/cartagena.jpg" alt="">
+                        <div class="info-item">
+                                <h3>{{travel.plan.name}}</h3>
+                                <span>{{travel.plan.travels.count}} opciones diferentes</span>
+                            </div>
+                    </div>
+                </li>
           
-          <li class="col-25">
+          <!-- <li class="col-25">
               <div class="hover-item">
                   <div>
                       <h3 class="city">cartagena</h3>
@@ -161,7 +180,7 @@
                       <span>Argentina - 6 días</span>
                   </div>
               </div>
-          </li>
+          </li> -->
       </ul>
       </div>
   </div>

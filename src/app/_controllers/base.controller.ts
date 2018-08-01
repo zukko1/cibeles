@@ -7,14 +7,14 @@ import { PlansService } from "../_services/plans/plans.service";
 
 
 @Injectable()
-export class PlanController{
+export class BaseController{
     constructor(
         public messageService : MessageService,
         public router : Router,
         public servicesService : PlansService
     ) { 
     }
-    
+
     GetPlanes(){
         
     }

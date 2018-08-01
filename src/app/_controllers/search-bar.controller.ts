@@ -62,8 +62,14 @@ export class SearchBarController{
         this.loadResources().subscribe(
             result =>{
                 this.places = result[0]['hydra:member'];
+
                 this.routes = result[1]['hydra:member'];
+
                 this.travelDate = result[2]['hydra:member'];
+
+                console.log(this.places[0]);
+                console.log(this.routes);
+                console.log(this.travelDate);                
 
                 options = options != null? options : new SearchBarOptions();
 
@@ -77,5 +83,18 @@ export class SearchBarController{
         )
     }
 
+    public loadDestinies(options : SearchBarOptions, idSelected : string){
+        options.destiny = [];
+        var routes = this.routes.filter(e => e.Origin == idSelected); 
+        if(routes){
+            routes.forEach(route => { 
+                options.destiny.push(...this.places.filter(e => e['@id'] == route.Destination));
+            });
+        }                
+    }
+
+    public loadDates(options : SearchBarOptions, idOrigen : string, idDestiny : string){
+        options.dates = this.travelDate;
+    }
 
 }

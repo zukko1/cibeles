@@ -40,13 +40,14 @@ import { PlansService } from './_services/plans/plans.service';
 import { TravelService } from './_services/travel/travel.service';
 import { PlacesService } from './_services/places/places.service';
 import { TravelRoutesService } from './_services/travel-routes/travel-routes.service';
-
+import { TravelDateService } from './_services/travel-date/travel-date.service';
 /**
  * Controllers
  */
 
 import { UserController } from './_controllers/user.controller';
 import { SearchBarController } from './_controllers/search-bar.controller';
+import { TravelController } from './_controllers/travel.controller';
 
 /**
  * Configuration imports
@@ -68,7 +69,6 @@ import { PlanesComponent } from './componentes/planes/planes.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { AboutComponent } from './componentes/about/about.component';
 import { TravelDatesPickerComponent } from './controls/travel-dates-picker/travel-dates-picker.component';
-import { TravelDateService } from './_services/travel-date/travel-date.service';
 
 @NgModule({
   declarations: [
@@ -115,7 +115,8 @@ import { TravelDateService } from './_services/travel-date/travel-date.service';
     TravelService,
     PlacesService,
     TravelRoutesService,
-    TravelDateService
+    TravelDateService,
+    TravelController
   ],
   bootstrap: [AppComponent]
 })

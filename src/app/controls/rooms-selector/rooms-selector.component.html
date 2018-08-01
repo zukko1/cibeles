@@ -1,19 +1,19 @@
 <div class="tr-desp-habitaciones">
   <div class="tr-cont-hab">
     <p>Número de habitaciones</p>
-    <form action="">
-      <input type="button" class="tr-btn menos" value="">
-      <input type="text" value="">
-      <input type="button" class="tr-btn mas" value="">
-    </form>
+    <div>
+      <input type="button" class="tr-btn menos" value="" (click)="aggregateRooms(-1)">
+      <input type="text" value="" [(ngModel)]="numberRooms"  disabled>
+      <input type="button" class="tr-btn mas" value="" (click)="aggregateRooms(1)">
+    </div>
   </div>
   <div class="tr-cont-per">
     <p>Número de personas</p>
-    <form action="">
-      <input type="button" class="tr-btn menos" value="">
-      <input type="text" Value="">
-      <input type="button" class="tr-btn mas" value="">
-    </form>
+    <div>
+      <input type="button" class="tr-btn menos" value="" (click)="aggregatePeople(-1)">
+      <input type="text" Value="" [(ngModel)]="numberPeople"  disabled>
+      <input type="button" class="tr-btn mas" value="" (click)="aggregatePeople(1)">
+    </div>
     <span>*Incluya total niños y adultos</span>
   </div>
 </div>
