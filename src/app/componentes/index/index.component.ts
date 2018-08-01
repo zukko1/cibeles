@@ -12,6 +12,8 @@ export class IndexComponent implements OnInit, OnDestroy {
   public groupTravels : Travel[];
   public starredTravels : Travel[];
 
+  public loadingGroups = true;
+
   constructor(
     public travelController : TravelController
   ) { }
@@ -25,7 +27,7 @@ export class IndexComponent implements OnInit, OnDestroy {
         console.log(this.groupTravels);
       }
     );
-    
+
     this.travelController.starredSubject.subscribe(
       travels => {
         this.starredTravels = travels;
