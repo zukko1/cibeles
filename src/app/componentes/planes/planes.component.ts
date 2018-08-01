@@ -13,7 +13,6 @@ export class PlanesComponent implements OnInit, OnDestroy {
   public groupFlyTravels : Travel[];
   public aloneTravels : Travel[];
 
-
   constructor(
     public travelController : TravelController
   ) { }
@@ -51,6 +50,4 @@ export class PlanesComponent implements OnInit, OnDestroy {
     this.travelController.groupSubject.unsubscribe();
     this.travelController.starredSubject.unsubscribe();
   }
-
-
 }

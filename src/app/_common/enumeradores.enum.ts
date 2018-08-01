@@ -37,7 +37,9 @@ export enum EntityURI{
 
 export const Transport = {
     1 : 'Aéreo',
-    2 : 'Terrestre'
+    2 : 'Terrestre',
+    'Aéreo' : 1,
+    'Terrestre' : 2
 }
 
 export const Months = {

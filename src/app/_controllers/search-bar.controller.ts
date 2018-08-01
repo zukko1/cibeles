@@ -17,6 +17,7 @@ import { TavelDate } from "../_models/_entity-models/travelDate";
 import { runInThisContext } from "vm";
 import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 import { Observable, of, forkJoin } from "rxjs";
+import { CacheHelper } from "../_helpers/cacheHelper";
 
 @Injectable()
 export class SearchBarController{
@@ -39,15 +40,18 @@ export class SearchBarController{
     public travelDate : TavelDate[];
 
     public search(filters : SearchBarFilters){
-        this.travelService.GetList().subscribe(
+        console.log(filters.getStringFilters());
+        
+        this.travelService.search(filters.getStringFilters()).subscribe(
             result => {
-                console.log(
-                    result['hydra:member']
-                );                 
+                CacheHelper.SetFilteredTrips(result['hydra:member']);
+                if(result['hydra:member'].length <= 0){
+                    this.messageService.error("No se encontraron resultados para la búsqueda");
+                } else{
+                    this.router.navigateByUrl(Urls.SEARCH_RESULT);
+                }
             }
         )
-        this.messageService.success(filters.idFavoriteDestiny.toString());
-        this.router.navigateByUrl(Urls.SEARCH_RESULT);
     }
 
     public loadResources() : Observable<any>{

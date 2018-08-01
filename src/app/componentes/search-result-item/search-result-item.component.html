@@ -2,13 +2,13 @@
 
 <img src="../../../assets/img/cuidad-de-panama.jpg" alt="panama" title="Cuidad de Panamá">
 <div class="tr-info-rst-bus">
-    <h2>CIUDAD DE PANAMÁ</h2>
-    <span>Panamá - 5 días</span>
+    <h2>{{travel.plan.name}}</h2>
+    <span>Durante {{getDays(travel.stardDate, travel.finishDate)}} días</span>
     <p>
-        <b>Plan premium:</b> 4 nohes, 5 días todo incluido<br/>
-        <b>Hotel Panamá City:</b> (1 habitación) 2 personas<br/>
-        <b>Fecha de llegada al hotel:</b> Sab. 23 de junio<br/>
-        <b>Fecha de salida del hotel:</b> Mie. 27 de junio
+        <!-- <b>Plan premium:</b> 4 nohes, 5 días todo incluido<br/> -->
+        <!-- <b>Hotel Panamá City:</b> (1 habitación) 2 personas<br/> -->
+        <b>Fecha de llegada al hotel:</b> {{travel.stardDate.toLocaleDateString()}}<br/>
+        <b>Fecha de salida del hotel:</b> {{travel.finishDate.toLocaleDateString()}}<br/>
     </p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta mauris vitae tellus pretium, in faucibus enim blandit. Suspendisse quis sem ut velit sagittis vulputate. Donec rhoncus efficitur mi, id efficitur sem scelerisque vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse luctus ipsum non imperdiet rutrum. Curabitur cursus est ac tortor ultricies bibendum.</p>
     <div class="tr-cont-icons">
@@ -21,7 +21,7 @@
 </div>
 <div class="tr-valores">
     <span>DESDE</span>
-    <h3>$ 679.000</h3>
+    <h3>$ {{travel.basePrice | currency}}</h3>
     <div class="tr-estado">
         <span class="tr-disponible">DISPONIBLE</span>
         <a class="tr-btn tr-verde" href="#">RESERVAR</a>

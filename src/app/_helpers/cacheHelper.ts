@@ -2,6 +2,7 @@ import { AppContext } from "../_common/app-context";
 import { SESSION_APP_CONTEXT } from "../_common/constants";
 import { User } from "../_models/user";
 import { Role } from "../_models/_entity-models/role";
+import { Travel } from "../_models/_entity-models/travel";
 
 /**
  * Helper para el uso de la caché/LocalStorage de la aplicación
@@ -148,6 +149,29 @@ export class CacheHelper {
      */
     public static GetCurrentIdEntity(): number {
         return this.GetContext().IdEntity;
+    }
+    
+    /**
+     * @static
+     * @method SetFilteredTrips Asigna viajes filtrados por el buscador en la última consulta realizada
+     * @param travels = viajes que se va a almacenar en el contexto de la aplicación
+     * @returns void
+     */
+    public static SetFilteredTrips(travels: Travel[]) {
+        var aux = this.GetContext();
+        aux.FilteredTrips = travels;
+        this.SetContext(aux);
+    }
+    
+    /**
+     * @static
+     * @method GetCurrentUser Obtiene en usuario actual almacenado en la caché de la aplicación.
+     * @param 
+     * @returns User
+     */
+    public static GetFilteredTrips(): Travel[] {
+        var context = JSON.parse(sessionStorage.getItem(SESSION_APP_CONTEXT));
+        return AppContext.fromEntitieJSON<Travel[]>(context.FilteredTrips);
     }
 }
 /**

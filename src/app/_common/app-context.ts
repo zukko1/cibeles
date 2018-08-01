@@ -1,4 +1,5 @@
 import { User } from "../_models/user";
+import { Travel } from "../_models/_entity-models/travel";
 
 export class AppContext{
   
@@ -7,6 +8,7 @@ export class AppContext{
     public CurrentRol : string[];
     public CurrentEntity : string;
     public IdEntity : number;
+    public FilteredTrips : Travel[];
     constructor(){}
 
     public static fromJSON(json: any): AppContext {

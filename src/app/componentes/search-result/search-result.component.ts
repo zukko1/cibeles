@@ -3,6 +3,7 @@ import { Plan } from "../../_models/_entity-models/plan";
 import { Hotel } from "../../_models/_entity-models/hotel";
 import { TavelDate } from "../../_models/_entity-models/travelDate";
 import { Travel } from "../../_models/_entity-models/travel";
+import { CacheHelper } from "../../_helpers/cacheHelper";
 
 @Component({
     selector:'result-search',
@@ -12,11 +13,24 @@ import { Travel } from "../../_models/_entity-models/travel";
     ]
 })
 export class SearchResultComponent implements OnInit{
+    
+    public travels : Travel[] = [];
 
-    @Input() public plan : Plan;
-    public hotel : Hotel;    
-    public travelDates : TavelDate;
-    public travel : Travel;
+    constructor(){
+
+    }
+
     ngOnInit(): void {
+        console.log("Init result");
+        console.log(CacheHelper.GetFilteredTrips());
+        let filteredTrips = CacheHelper.GetFilteredTrips();
+        for(var i in filteredTrips){
+            this.travels.push(filteredTrips[i]);
+        }
+        console.log(this.travels);
+    }
+
+    getDays(date, date3){
+        return 0;
     }
 }

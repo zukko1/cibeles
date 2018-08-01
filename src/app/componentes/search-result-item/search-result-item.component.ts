@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Travel } from '../../_models/_entity-models/travel';
 
 @Component({
   selector: 'app-search-result-item',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultItemComponent implements OnInit {
 
+  @Input() travel : Travel;
   constructor() { }
 
   ngOnInit() {
