@@ -2,40 +2,44 @@
 <div class="search-container" [class.search-interno]="internalPage">
     <div class="center-container">
         <h2>circuitos colombia - salidas puntuales</h2>
-                {{options.origin}}
         <fieldset>
             <div>
                 <label for="origen"></label>
-                <select name="" id="origen" [(ngModel)] = "filters.idOrigen">
-                    <option value = "0" selected>Origen</option>
-                    <option value = "{{city['@id']}}" *ngFor="let city of options.origin">{{city.name}}</option>
+                <select name="" id="origen" [(ngModel)]="filters.idOrigen" (ngModelChange)="selectOrigen($event)">
+                    <option value="" selected>Origen</option>
+                    <option value="{{city['@id']}}" *ngFor="let city of options.origin">{{city.name}}</option>
                 </select>
             </div>
             <div>
                 <label for="tipo"></label>
-                <select name="" id="tipo" [(ngModel)] = "filters.transportType">
-                    <option value="0" selected>Tipo de transporte</option>
-                    <option value = "1">Aereo</option>
+                <select name="" id="tipo" [(ngModel)]="filters.transportType" >
+                    <option value="" selected>Tipo de transporte</option>
+                    <option value="{{transport}}" *ngFor="let transport of options.transport">{{transport}}</option>
                 </select>
             </div>
             <div>
                 <label for="destino"></label>
-                <select name="" id="destino" [(ngModel)] = "filters.idFavoriteDestiny">
-                    <option value="0" selected>Destino favorito</option>
-                    <option value = "1">Panamá</option>
+                <select name="" id="destino" [(ngModel)]="filters.idFavoriteDestiny" (ngModelChange)="selectDestiny($event)">
+                    <option value="" selected>Destino favorito</option>
+                    <option value="{{city['@id']}}" *ngFor="let city of options.destiny">{{city.name}}</option>
                 </select>
             </div>
-            <div (click)="showOuts()">
-                <label for="fecha"></label>
-                <input type="date" name="" id="fecha" [(ngModel)] = "filters.startDate">
+            <div>
+                <label for="fecha" (click)="showOuts()"></label>
+                <select name="" id="fecha" disabled (click)="showOuts()">
+                    <option value="" selected>Salidas</option>
+                </select>
+                <div class="personalizedControl" [@show-personalizedControl]="showouts">
+                    <travel-dates-picker [dates]="options.dates" [parentSubject]="parentSubject"></travel-dates-picker>
+                </div>
             </div>
-            <div (click)="showRooms()">
-                <label for="habitaciones"></label> 
-                <select name="" id="habitaciones"  [(ngModel)] = "filters.peopleNumber" disabled>
+            <div>
+                <label for="habitaciones" (click)="showRooms()"></label> 
+                <select name="" id="habitaciones" disabled>
                     <option value="0" selected>Habitaciones</option>
                 </select>
-                <div class="rooms" [@show-rooms]="showrooms">
-                    <rooms-selector></rooms-selector>
+                <div class="personalizedControl" [@show-personalizedControl]="showrooms">
+                    <rooms-selector [parentSubject] = "roomsSelectorSubject"></rooms-selector>
                 </div>
             </div>
             <button (click)="search()"></button>
