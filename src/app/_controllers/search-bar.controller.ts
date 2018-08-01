@@ -14,8 +14,6 @@ import { TravelDateService } from "../_services/travel-date/travel-date.service"
 import { Place } from "../_models/_entity-models/place";
 import { TravelRoute } from "../_models/_entity-models/travel-routes";
 import { TavelDate } from "../_models/_entity-models/travelDate";
-import { runInThisContext } from "vm";
-import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 import { Observable, of, forkJoin } from "rxjs";
 import { CacheHelper } from "../_helpers/cacheHelper";
 
@@ -29,7 +27,7 @@ export class SearchBarController{
         public placeService : PlacesService,
         public travelRouteService : TravelRoutesService,
         public travelDatesService : TravelDateService
-    ) {  
+    ) {
         this.places = [];
         this.routes = [];
         this.travelDate = [];
@@ -41,7 +39,7 @@ export class SearchBarController{
 
     public search(filters : SearchBarFilters){
         console.log(filters.getStringFilters());
-        
+
         this.travelService.search(filters.getStringFilters()).subscribe(
             result => {
                 CacheHelper.SetFilteredTrips(result['hydra:member']);
@@ -56,8 +54,8 @@ export class SearchBarController{
 
     public loadResources() : Observable<any>{
         return forkJoin(
-            this.placeService.GetList(),    
-            this.travelRouteService.GetList(),    
+            this.placeService.GetList(),
+            this.travelRouteService.GetList(),
             this.travelDatesService.GetList()
         );
     }
@@ -73,14 +71,14 @@ export class SearchBarController{
 
                 console.log(this.places[0]);
                 console.log(this.routes);
-                console.log(this.travelDate);                
+                console.log(this.travelDate);
 
                 options = options != null? options : new SearchBarOptions();
 
                 options.origin = this.places;
 
                 options.transport = [
-                    Transport[1], 
+                    Transport[1],
                     Transport[2]
                 ];
             }
@@ -89,12 +87,12 @@ export class SearchBarController{
 
     public loadDestinies(options : SearchBarOptions, idSelected : string){
         options.destiny = [];
-        var routes = this.routes.filter(e => e.Origin == idSelected); 
+        var routes = this.routes.filter(e => e.Origin == idSelected);
         if(routes){
-            routes.forEach(route => { 
+            routes.forEach(route => {
                 options.destiny.push(...this.places.filter(e => e['@id'] == route.Destination));
             });
-        }                
+        }
     }
 
     public loadDates(options : SearchBarOptions, idOrigen : string, idDestiny : string){

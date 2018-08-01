@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 import {Urls} from '../../_common/routes';
 import {SearchBarOptions} from '../../_models/search-bar/searchBarOptions';
 import {Subject} from 'rxjs';
-import {networkInterfaces} from 'os';
 
 @Component({
   selector: 'search-bar-index',
