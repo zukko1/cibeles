@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   offline: true,
-  baseIP:"http://127.0.0.1",
-  baseAPIUrl:"/cibeles-backsymfony/public/index.php/"
+  baseIP:"http://127.0.0.1:81",
+  baseAPIUrl:"/api_cibeles/public/index.php/"
 };

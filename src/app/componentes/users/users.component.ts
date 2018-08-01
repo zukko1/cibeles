@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../../_models/user';
-import { UserController } from '../../_controllers/user.controller';
-import { LoginDto } from '../../_models/dto/login-dto';
+import {Component, OnInit} from '@angular/core';
+import {User} from '../../_models/user';
+import {UserController} from '../../_controllers/user.controller';
+import {LoginDto} from '../../_models/dto/login-dto';
 
 @Component({
   selector: 'app-users',
@@ -10,16 +10,17 @@ import { LoginDto } from '../../_models/dto/login-dto';
 })
 export class UsersComponent implements OnInit {
 
-  public user = {'username' : '', 'password' :''};
-  constructor(public userController : UserController) {
-    
+  public user = {'username': '', 'password': ''};
+
+  constructor(public userController: UserController) {
+
   }
 
   ngOnInit() {
 
   }
 
-  login(){
+  login() {
     this.userController.login(new LoginDto());
   }
 
