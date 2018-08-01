@@ -75,7 +75,6 @@ import {RoutingModule} from '../modules/routing.modules';
 import {JwtInterceptor} from './_interceptors/jwt.interceptor';
 import {ErrorInterceptor} from './_interceptors/error.interceptor';
 import {Ter4BtnPrincipalDirective} from './directives/ter4-btn-principal/ter4-btn-principal.directive';
-import {MatSnackBarModule} from '@angular/material';
 import {IndexComponent} from './componentes/index/index.component';
 import {SearchResultComponent} from './componentes/search-result/search-result.component';
 import {SearchResultItemComponent} from './componentes/search-result-item/search-result-item.component';
