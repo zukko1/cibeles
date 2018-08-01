@@ -6,6 +6,7 @@
 	border-radius: 7px;
 	box-sizing: border-box;
 	padding: 1%;
+	z-index: 1;
 }
 
 .tr-meses,
@@ -26,7 +27,7 @@
     display: inline-block;
     line-height: 35px;
     font-size: 22px;
-    font-family: 'oswaldextralight';
+    font-family: 'oswald-extralight';
 }
 
 .tr-salidas .tr-arrow{
@@ -81,11 +82,15 @@
     border: 0;
     text-align: left;
 	cursor: pointer;
-	font-family: 'oswaldextralight';
+	font-family: 'oswald-extralight';
 	transition: all .2s ease-in-out;
 }
 
 .tr-cont-salidas ul li input[type="button"]:hover{
 	text-decoration: underline;
 	color: #EA1216;
+}
+
+.travelDatePickerItem{
+	height: 20px;
 }

@@ -1,0 +1,17 @@
+
+<div class="tr-salidas">
+  <div class="tr-meses">
+    <form action="">
+      <input type="button" class="tr-arrow ant" value="" (click)="previusMonth()" >
+      <label>{{month}} - {{year}}</label>
+      <input type="button" class="tr-arrow sig" value="" (click)="nextMonth()">
+    </form>
+  </div>  
+  <div class="tr-cont-salidas">
+    <ul>
+      <li *ngFor="let date of showDates" >
+          <input type="button" class="travelDatePickerItem" [value]="getButtonText(date.startDate, date.finishDate)" (click)="selectDate(date['@id'])">
+      </li>
+    </ul>
+  </div>
+</div>

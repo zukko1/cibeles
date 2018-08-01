@@ -67,7 +67,7 @@ import { RoomsSelectorComponent } from './controls/rooms-selector/rooms-selector
 import { PlanesComponent } from './componentes/planes/planes.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { AboutComponent } from './componentes/about/about.component';
-import { SalidasComponent } from './controls/salidas/salidas.component';
+import { TravelDatesPickerComponent } from './controls/travel-dates-picker/travel-dates-picker.component';
 import { TravelDateService } from './_services/travel-date/travel-date.service';
 
 @NgModule({
@@ -89,7 +89,7 @@ import { TravelDateService } from './_services/travel-date/travel-date.service';
     PlanesComponent,
     LoginComponent,
     AboutComponent,
-    SalidasComponent
+    TravelDatesPickerComponent
   ],
   imports: [
     HttpModule,
