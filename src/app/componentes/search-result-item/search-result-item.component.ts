@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Travel } from '../../_models/_entity-models/travel';
+import { Router } from '@angular/router';
+import { Urls } from '../../_common/routes';
 
 @Component({
   selector: 'app-search-result-item',
@@ -9,7 +11,9 @@ import { Travel } from '../../_models/_entity-models/travel';
 export class SearchResultItemComponent implements OnInit {
 
   @Input() travel : Travel;
-  constructor() { }
+  constructor(
+    public router : Router
+  ) { }
 
   ngOnInit() {
   }
@@ -23,4 +27,7 @@ export class SearchResultItemComponent implements OnInit {
       return date.toLocaleDateString();
   }
 
+  seeMore(id : string){
+    this.router.navigateByUrl(Urls.DETALLE_VUELO + '/' + id);
+  }
 }

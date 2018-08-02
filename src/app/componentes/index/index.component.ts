@@ -37,8 +37,8 @@ export class IndexComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.travelController.groupSubject.unsubscribe();
-    this.travelController.starredSubject.unsubscribe();
+    // this.travelController.groupSubject.unsubscribe();
+    // this.travelController.starredSubject.unsubscribe();
   }
 
   getDays(startDate : Date, finishDate : Date){

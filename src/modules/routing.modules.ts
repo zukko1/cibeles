@@ -31,7 +31,7 @@ const routes: Routes = [
         component: InternalLayoutComponent,
         children: [
           {
-            path: 'detalle-vuelo',
+            path: 'detalle-vuelo/:id',
             component: DetalleVueloComponent,
           },
           {
