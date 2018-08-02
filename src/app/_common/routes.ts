@@ -13,7 +13,7 @@ export class Urls {
     public static ABOUT: string = Urls.INTERNO + '/conocenos';
 
   public static ADMINISTRATOR: string = Urls.PATH_BASE + '/administracion';
-    public static HOME: string = Urls.INTERNO + '/home';
+    public static HOME: string = Urls.ADMINISTRATOR + '/home';
 
 
 }

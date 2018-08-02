@@ -29,9 +29,6 @@ export class UserController {
       },
       error => {
         this.messageService.error('Ah ocurrido un error en el inicio de sesión. Inténtelo de nuevo más tarde.');
-      },
-      () => {
-        this.messageService.error('Ah ocurrido un error en el inicio de sesión. Inténtelo de nuevo más tarde.');
       }
     );
   }
