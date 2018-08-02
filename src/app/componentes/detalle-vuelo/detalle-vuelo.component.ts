@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TravelController } from '../../_controllers/travel.controller';
+import { Travel } from '../../_models/_entity-models/travel';
 
 @Component({
   selector: 'app-detalle-vuelo',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleVueloComponent implements OnInit {
 
-  constructor() { }
+  public travel : Travel;
+
+  constructor(
+    public route : ActivatedRoute,
+    public travelController : TravelController
+  ) { }
 
   ngOnInit() {
+    this.getTravel();
   }
 
+  getTravel(){
+    const id = this.route.snapshot.paramMap.get('id');
+    this.travelController.getTravelById(id).subscribe(
+      travel =>{
+        this.travel = travel;
+        console.log("this.travel");      
+        console.log(this.travel);        
+      }
+    )
+  }
 }

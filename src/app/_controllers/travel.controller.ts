@@ -27,6 +27,7 @@ export class TravelController implements OnInit{
     }
 
     ngOnInit(): void {
+        this.loadTravels();
     }
 
     public loadTravels(){        
@@ -52,18 +53,27 @@ export class TravelController implements OnInit{
     }
 
     public loadStarredTravels() : Travel[]{
-        return this.travels.filter(e => e.starredTravel);
+        let result = this.travels.filter(e => e.starredTravel);
+        
+        return result;
     }
 
     public loadGroupTravels() : Travel[]{
-        return this.travels.filter(e => e.category = TravelType.GruopOut);
+        let result = this.travels.filter(e => e.category == TravelType.GruopOut);
+        return result;
     }
 
     public loadGroupFlyTravels() : Travel[]{
-        return this.travels.filter(e => e.category = TravelType.GroupFlyOut);
+        let result = this.travels.filter(e => e.category == TravelType.GroupFlyOut);
+        return result;
     }
 
     public loadAloneTravels() : Travel[]{
-        return this.travels.filter(e => e.category = TravelType.AloneOut);
+        let result = this.travels.filter(e => e.category == TravelType.AloneOut);
+        return result;
+    }
+
+    public getTravelById(id : string){
+        return this.travelService.GetEntityById(id);
     }
 }
