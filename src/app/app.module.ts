@@ -88,6 +88,7 @@ import {LoginComponent} from './componentes/login/login.component';
 import {AboutComponent} from './componentes/about/about.component';
 import {TravelDatesPickerComponent} from './controls/travel-dates-picker/travel-dates-picker.component';
 import {HomeComponent} from './componentes-admin/home/home.component';
+import { PlanComponent } from './componentes-admin/plan/plan.component';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import {HomeComponent} from './componentes-admin/home/home.component';
     LoginComponent,
     AboutComponent,
     TravelDatesPickerComponent,
-    HomeComponent
+    HomeComponent,
+    PlanComponent
   ],
   imports: [
     HttpModule,

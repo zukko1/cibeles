@@ -11,6 +11,7 @@ import {PlanesComponent} from '../app/componentes/planes/planes.component';
 import {LoginComponent} from '../app/componentes/login/login.component';
 import {AboutComponent} from '../app/componentes/about/about.component';
 import {HomeComponent} from '../app/componentes-admin/home/home.component';
+import {PlanComponent} from '../app/componentes-admin/plan/plan.component';
 import {AuthGuard} from '../app/_guards/auth.guard';
 
 const routes: Routes = [
@@ -65,6 +66,10 @@ const routes: Routes = [
           {
             path: 'home',
             component: HomeComponent
+          },
+          {
+            path: 'plan',
+            component: PlanComponent
           }
         ]
       }

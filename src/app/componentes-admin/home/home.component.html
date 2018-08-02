@@ -12,15 +12,15 @@
         </a>
    </span>
   <span class="toolbar-spacer"></span>
-  <a [routerLink]="['/login']" mat-list-item><mat-icon class="toolbar-icon">settings</mat-icon></a>
+  <a [routerLink]="[urls.PLAN]" mat-list-item><mat-icon class="toolbar-icon">settings</mat-icon></a>
 
 </mat-toolbar>
 <mat-sidenav-container fullscreen style="margin-top: 75px !important;">
   <mat-sidenav #sidenav mode="side" class="sidenav">
     <h4 class="subheader">Menu</h4>
     <mat-nav-list>
-      <a [routerLink]="['/clientes']" mat-list-item href="#"><mat-icon>assignment_ind</mat-icon>Clientes</a>
-      <a mat-list-item href="#"><mat-icon>business_center</mat-icon>Abogados</a>
+      <a [routerLink]="[urls.PLAN]" mat-list-item href="#"><mat-icon>list_alt</mat-icon>Planes</a>
+      <a mat-list-item href="#"><mat-icon>business_center</mat-icon>Lugares</a>
       <a mat-list-item href="#"><mat-icon>gavel</mat-icon>Casos</a>
     </mat-nav-list>
   </mat-sidenav>

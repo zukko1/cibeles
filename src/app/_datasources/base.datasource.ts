@@ -1,12 +1,12 @@
-import { CollectionViewer, DataSource } from '@angular/cdk/collections';
-import { UsersService } from '../_services/users/users.service';
-import { ResponseBase } from '../_models/response-base';
-import { BehaviorSubject ,  Observable } from 'rxjs';
-import { ModelBase } from '../_models/model-base';
-import { ServiceBase } from '../_services/base.service';
+import {CollectionViewer, DataSource} from '@angular/cdk/collections';
+import {UsersService} from '../_services/users/users.service';
+import {ResponseBase} from '../_models/response-base';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {ModelBase} from '../_models/model-base';
+import {ServiceBase} from '../_services/base.service';
 
 export class BaseDataSource<M> implements DataSource<ResponseBase> {
-  
+
   private usersSubject = new BehaviorSubject<ResponseBase[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
   private lengthSubject = new BehaviorSubject<number>(1);

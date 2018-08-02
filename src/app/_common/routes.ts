@@ -14,6 +14,7 @@ export class Urls {
 
   public static ADMINISTRATOR: string = Urls.PATH_BASE + '/administracion';
     public static HOME: string = Urls.ADMINISTRATOR + '/home';
+    public static PLAN: string = Urls.ADMINISTRATOR + '/plan';
 
 
 }

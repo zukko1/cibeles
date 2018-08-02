@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Urls } from '../../_common/routes';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  urls = Urls;
   constructor() { }
 
   ngOnInit() {
