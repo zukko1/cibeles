@@ -20,4 +20,11 @@ export class Utils{
     public static aggregateMonth(date : Date) : Date{
         return new Date(date.valueOf() + this.monthInMiliseconds());
     }
+
+    public static getDays(finishDate : string, startDate : string) : number{
+        var finish = new Date(finishDate);        
+        var start = new Date(startDate);
+        var result = finish.valueOf() - start.valueOf();
+        return ( result )/(1440*60000);
+    }
 }

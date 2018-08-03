@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TravelController } from '../../_controllers/travel.controller';
 import { Travel } from '../../_models/_entity-models/travel';
+import { Utils } from '../../_common/util';
+import { Router } from '@angular/router';
+import { Urls } from '../../_common/routes';
 
 @Component({
   selector: 'app-index',
@@ -15,7 +18,8 @@ export class IndexComponent implements OnInit, OnDestroy {
   public loadingGroups = true;
 
   constructor(
-    public travelController : TravelController
+    public travelController : TravelController,
+    public router : Router
   ) { }
 
   ngOnInit() {
@@ -41,8 +45,11 @@ export class IndexComponent implements OnInit, OnDestroy {
     // this.travelController.starredSubject.unsubscribe();
   }
 
-  getDays(startDate : Date, finishDate : Date){
-    return 0;
+  getDays(startDate : string, finishDate : string){
+    return Utils.getDays(finishDate, startDate);
   }
 
+  seeMore(id : string){
+    this.router.navigateByUrl(Urls.DETALLE_VUELO + '/' + id);
+  }
 }

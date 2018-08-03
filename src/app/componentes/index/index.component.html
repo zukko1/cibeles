@@ -21,11 +21,11 @@
             <li class="col-25" *ngFor="let travel of groupTravels">
                 <div class="hover-item">
                     <div>
-                        <h3 class="city">{{travel.plan.name}}</h3>
-                        <span class="depto">{{getDays(travel.stardDate, travel.finishDate)}}</span>
+                        <h3 class="city"> {{travel.plan.name}} </h3>
+                        <span class="depto">Durante {{getDays(travel.stardDate, travel.finishDate)}} {{ getDays(travel.stardDate, travel.finishDate) > 1 ? "Días" : "Día"}}</span>
                         <h3>desde</h3>
                         <h3 class="price">{{travel.basePrice}}</h3>
-                        <a href="#">Ver más</a>
+                        <a (click)="seeMore(travel.id)">Ver más</a>
                     </div>
                 </div>
                 <div class="image-container">
@@ -194,10 +194,10 @@
                         <div class="hover-item">
                             <div>
                                 <h3 class="city">{{travel.plan.name}}</h3>
-                                <span class="depto">{{getDays(travel.stardDate, travel.finishDate)}}</span>
+                                <span class="depto">Durante {{getDays(travel.stardDate, travel.finishDate)}} {{ getDays(travel.stardDate, travel.finishDate) > 1 ? "Días" : "Día"}}</span>
                                 <h3>desde</h3>
                                 <h3 class="price">{{travel.basePrice}}</h3>
-                                <a href="#">Ver más</a>
+                                <a (click)="seeMore(travel.id)">Ver más</a>
                             </div>
                         </div>
                         <div class="image-container">

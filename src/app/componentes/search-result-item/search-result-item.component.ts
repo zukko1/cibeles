@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Travel } from '../../_models/_entity-models/travel';
 import { Router } from '@angular/router';
 import { Urls } from '../../_common/routes';
+import { Utils } from '../../_common/util';
 
 @Component({
   selector: 'app-search-result-item',
@@ -18,10 +19,9 @@ export class SearchResultItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  getDays(date, date3){
-      return 0;
-  }
-
+  getDays(date, date2){
+    return Utils.getDays(date2, date);
+}
   getDate(dateStr :string){
       let date = new Date(dateStr);
       return date.toLocaleDateString();

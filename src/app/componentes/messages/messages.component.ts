@@ -17,7 +17,6 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.messageService.getMessage().subscribe(message => {
-      console.log(message);
       if(message){
         this.message = message;
         this.snackBar.open(message.text, message.type,{duration: 2000});

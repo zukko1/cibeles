@@ -59,7 +59,7 @@ export abstract class ServiceBase<M>{
      */
     public GetEntityByIdStanard<E>(entityURI: string){
         return this.http.get<E>(
-            entityURI
+            environment.baseIP + entityURI
         )
     }
     /**

@@ -4,4 +4,5 @@ export interface Day extends ModelBase{
     id : number;
     name : string;
     activities : string;
+    idSchedule : string;
 }

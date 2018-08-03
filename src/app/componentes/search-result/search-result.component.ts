@@ -4,6 +4,7 @@ import { Hotel } from "../../_models/_entity-models/hotel";
 import { TavelDate } from "../../_models/_entity-models/travelDate";
 import { Travel } from "../../_models/_entity-models/travel";
 import { CacheHelper } from "../../_helpers/cacheHelper";
+import { Utils } from "../../_common/util";
 
 @Component({
     selector:'result-search',
@@ -30,12 +31,13 @@ export class SearchResultComponent implements OnInit{
         console.log(this.travels);
     }
 
-    getDays(date, date3){
-        return 0;
+    getDays(date, date2){
+        return Utils.getDays(date2, date);
     }
 
     getDate(dateStr :string){
         let date = new Date(dateStr);
+        debugger;
         return date.toLocaleDateString();
     }
 }
