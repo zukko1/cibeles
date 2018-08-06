@@ -24,6 +24,7 @@ export class TravelController implements OnInit{
         public travelService : TravelService
     ) { 
         this.travels = [];
+        this.loadTravels();
     }
 
     ngOnInit(): void {
@@ -31,12 +32,9 @@ export class TravelController implements OnInit{
     }
 
     public loadTravels(){        
-        console.log("init Travel");        
         this.loadResources().subscribe(
             result => {
-                console.log("subscribe Travel");       
                 this.travels = result[0]['hydra:member'];
-                console.log(result);       
                 this.starredSubject.next(this.loadStarredTravels());
                 this.groupFlySubject.next(this.loadGroupFlyTravels());
                 this.groupSubject.next(this.loadGroupTravels());

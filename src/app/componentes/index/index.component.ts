@@ -5,6 +5,7 @@ import { Utils } from '../../_common/util';
 import { Router } from '@angular/router';
 import { Urls } from '../../_common/routes';
 
+declare var StartSlick;
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -16,7 +17,7 @@ export class IndexComponent implements OnInit, OnDestroy {
   public starredTravels : Travel[];
 
   public loadingGroups = true;
-
+  
   constructor(
     public travelController : TravelController,
     public router : Router
@@ -28,16 +29,15 @@ export class IndexComponent implements OnInit, OnDestroy {
     this.travelController.groupSubject.subscribe(
       travels => {
         this.groupTravels = travels;
-        console.log(this.groupTravels);
       }
     );
 
     this.travelController.starredSubject.subscribe(
       travels => {
         this.starredTravels = travels;
-        console.log(this.starredTravels);
       }
     )
+    StartSlick();
   }
 
   ngOnDestroy(): void {

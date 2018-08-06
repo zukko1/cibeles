@@ -91,6 +91,7 @@ import { AboutComponent } from './componentes/about/about.component';
 import { TravelDatesPickerComponent } from './controls/travel-dates-picker/travel-dates-picker.component';
 import { HomeComponent } from './componentes-admin/home/home.component';
 import { PlanComponent  } from './componentes-admin/plan/plan.component';
+import { TravelItemComponent } from './componentes/travel-item/travel-item.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { PlanComponent  } from './componentes-admin/plan/plan.component';
     AboutComponent,
     TravelDatesPickerComponent,
     HomeComponent,
-    PlanComponent
+    PlanComponent,
+    TravelItemComponent
   ],
   imports: [
     HttpModule,

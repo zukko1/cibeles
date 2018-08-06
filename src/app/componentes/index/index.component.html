@@ -19,7 +19,8 @@
           <ul class="salidas-items col-100">
 
             <li class="col-25" *ngFor="let travel of groupTravels">
-                <div class="hover-item">
+                <travel-item [travel]="travel"></travel-item>
+                <!-- <div class="hover-item">
                     <div>
                         <h3 class="city"> {{travel.plan.name}} </h3>
                         <span class="depto">Durante {{getDays(travel.stardDate, travel.finishDate)}} {{ getDays(travel.stardDate, travel.finishDate) > 1 ? "Días" : "Día"}}</span>
@@ -34,7 +35,7 @@
                             <h3>{{travel.plan.name}}</h3>
                             <span>{{travel.plan.travels.length}} opciones diferentes</span>
                         </div>
-                </div>
+                </div> -->
             </li>
           
           <!-- <li class="col-25">
@@ -191,7 +192,8 @@
                 <h2>ofertas destacadas</h2>
                 <ul class="salidas-items col-100">
                     <li class="col-25" *ngFor="let travel of starredTravels">
-                        <div class="hover-item">
+                        <travel-item [travel]="travel"></travel-item>
+                        <!-- <div class="hover-item">
                             <div>
                                 <h3 class="city">{{travel.plan.name}}</h3>
                                 <span class="depto">Durante {{getDays(travel.stardDate, travel.finishDate)}} {{ getDays(travel.stardDate, travel.finishDate) > 1 ? "Días" : "Día"}}</span>
@@ -206,7 +208,7 @@
                                     <h3>{{travel.plan.name}}</h3>
                                     <span>{{travel.plan.travels.length}} opciones diferentes</span>
                                 </div>
-                        </div>
+                        </div> -->
                     </li>
               <!-- <li class="col-25">
                   <div class="hover-item">
