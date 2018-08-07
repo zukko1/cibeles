@@ -16,7 +16,7 @@ export class IndexComponent implements OnInit, OnDestroy {
   public starredTravels : Travel[];
 
   public loadingGroups = true;
-
+  
   constructor(
     public travelController : TravelController,
     public router : Router
@@ -28,16 +28,26 @@ export class IndexComponent implements OnInit, OnDestroy {
     this.travelController.groupSubject.subscribe(
       travels => {
         this.groupTravels = travels;
-        console.log(this.groupTravels);
       }
     );
 
     this.travelController.starredSubject.subscribe(
       travels => {
         this.starredTravels = travels;
-        console.log(this.starredTravels);
       }
     )
+    
+    console.log('preparing to load...')
+    let node = document.createElement('script');
+    node.src = "../../../assets/js/slick.min.js";
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
+    var head = document.getElementsByTagName('head')[0]
+    head.appendChild(node);
+    console.log(head);
+    console.log(node);
+    
   }
 
   ngOnDestroy(): void {
