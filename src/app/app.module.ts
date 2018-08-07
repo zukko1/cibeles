@@ -16,7 +16,7 @@ import { AuthGuard } from './_guards';
 /**
  * Material imports
  */
-import { 
+import {
   MatToolbarModule,
   MatDialogModule,
   MatListModule,
@@ -90,7 +90,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { AboutComponent } from './componentes/about/about.component';
 import { TravelDatesPickerComponent } from './controls/travel-dates-picker/travel-dates-picker.component';
 import { HomeComponent } from './componentes-admin/home/home.component';
-import { PlanComponent  } from './componentes-admin/plan/plan.component';
+import {PlanListComponent} from './componentes-admin/plan/plan-list/plan-list.component';
+import { PlanAddComponent } from './componentes-admin/plan/plan-add/plan-add.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { PlanComponent  } from './componentes-admin/plan/plan.component';
     AboutComponent,
     TravelDatesPickerComponent,
     HomeComponent,
-    PlanComponent
+    PlanListComponent,
+    PlanAddComponent
   ],
   imports: [
     HttpModule,
@@ -162,5 +164,5 @@ import { PlanComponent  } from './componentes-admin/plan/plan.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 }
