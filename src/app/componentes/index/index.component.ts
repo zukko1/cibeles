@@ -5,7 +5,6 @@ import { Utils } from '../../_common/util';
 import { Router } from '@angular/router';
 import { Urls } from '../../_common/routes';
 
-declare var StartSlick;
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -37,7 +36,18 @@ export class IndexComponent implements OnInit, OnDestroy {
         this.starredTravels = travels;
       }
     )
-    StartSlick();
+    
+    console.log('preparing to load...')
+    let node = document.createElement('script');
+    node.src = "../../../assets/js/slick.min.js";
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
+    var head = document.getElementsByTagName('head')[0]
+    head.appendChild(node);
+    console.log(head);
+    console.log(node);
+    
   }
 
   ngOnDestroy(): void {
