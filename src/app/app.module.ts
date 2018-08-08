@@ -7,11 +7,17 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule, RouterLink, Router} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpModule} from '@angular/http';
-import {Http, Response, Headers} from "@angular/http";
+import {Http, Response, Headers} from '@angular/http';
 import {map} from 'rxjs/operators';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthGuard} from './_guards';
+
+
+/*
+* External imports
+*/
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 /**
  * Material imports
@@ -35,7 +41,9 @@ import {
   MatSortModule,
   MatTableModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatSelectModule
 } from '@angular/material';
 
 /**
@@ -46,7 +54,6 @@ import {UsersComponent} from './componentes/users/users.component';
 import {MessagesComponent} from './componentes/messages/messages.component';
 import {InternalLayoutComponent} from './componentes/internal-layout/internal-layout.component';
 import {DetalleVueloComponent} from './componentes/detalle-vuelo/detalle-vuelo.component';
-
 
 /**
  Services
@@ -94,6 +101,7 @@ import {PlanListComponent} from './componentes-admin/plan/plan-list/plan-list.co
 import {PlanAddComponent} from './componentes-admin/plan/plan-add/plan-add.component';
 import {TravelItemComponent} from './componentes/travel-item/travel-item.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -123,6 +131,7 @@ import {TravelItemComponent} from './componentes/travel-item/travel-item.compone
     HttpModule,
     BrowserModule,
     FormsModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,
     RoutingModule,
@@ -144,7 +153,9 @@ import {TravelItemComponent} from './componentes/travel-item/travel-item.compone
     MatSortModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressBarModule,
+    MatSelectModule
   ],
   providers: [
     UsersService,

@@ -10,3 +10,12 @@
     font-size: 20px;
   }
 }
+
+.vertical-centered-text {
+  -ms-display: flex;
+  display: flex;
+  /* alineacion vertical */
+  align-items: center;
+  /* alineacion horizontal */
+  justify-content: center;
+}

@@ -1,11 +1,138 @@
-<mat-card-title>
-  <div class="docs-primary-header">
-    <h1>{{title}}</h1>
+<div class="container" fxLayout="column">
+  <div class="container">
+    <div class="docs-primary-header">
+      <h1>{{title}}</h1>
+    </div>
   </div>
-</mat-card-title>
-<mat-card-content>
-  <div class="example-container mat-elevation-z8">
-    prueba de sonido
+  <div class="container" fxFlexOffset="1%">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h2>Descripcion Del Plan</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row wrap">
+          <div fxFlex="50%">
+            <mat-card>
+              <div class="container" fxLayout="column">
+                <mat-form-field>
+                  <input matInput placeholder="Nombre del plan">
+                </mat-form-field>
+                <mat-form-field>
+                  <textarea matInput placeholder="Descripcion"></textarea>
+                </mat-form-field>
+              </div>
+            </mat-card>
+          </div>
+          <div fxFlex="49%" fxFlexOffset="1%">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>
+                  Imagen principal
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="container" fxLayout="column">
+                  <input type="file" placeholder="Subir imagen..." (change)="fileChangeEventImage($event)"/>
+                  <mat-progress-bar mode="determinate" value="0"></mat-progress-bar>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
-</mat-card-content>
+  <div class="container" fxFlexOffset="1%">
+    <mat-card fxFlex="39%">
+      <mat-card-header>
+        <mat-card-title><h2>Servicios Incluidos</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row wrap">
+          <div fxFlex="100%">
+            <mat-card>
+              <div class="container" fxLayout="column">
+                <mat-selection-list #shoes>
+                  <mat-list-option *ngFor="let shoe of typesOfShoes">
+                    <div fxLayout="row" fxFlexOffset="1%">
+                      <div class="tr-icon">
+                        <img src="../../../../assets/img/wifi.svg">
+                      </div>
+                      <div class="vertical-centered-text" fxFlexOffset="5%">
+                        {{shoe}}
+                      </div>
+                    </div>
+                  </mat-list-option>
+                </mat-selection-list>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex="60%" fxFlexOffset="1%">
+      <mat-card-header>
+        <mat-card-title><h2>Itinerario</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row wrap">
+          <div fxFlex="100%">
+            <mat-card>
+              <div class="container" fxLayout="column">
+                <mat-form-field>
+                  <mat-select placeholder="Itinerarios Existentes">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="container" fxFlexOffset="1%">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h2>Multimedia</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row wrap">
+          <div fxFlex="50%">
+            <mat-card>
+              <div class="container" fxLayout="column">
+                <mat-form-field>
+                  <input matInput placeholder="Nombre del plan">
+                </mat-form-field>
+                <mat-form-field>
+                  <textarea matInput placeholder="Descripcion"></textarea>
+                </mat-form-field>
+              </div>
+            </mat-card>
+          </div>
+          <div fxFlex="49%" fxFlexOffset="1%">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>
+                  Imagen principal
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="container" fxLayout="column">
+                  <input type="file" placeholder="Subir imagen..." (change)="fileChangeEventImage($event)"/>
+                  <mat-progress-bar mode="determinate" value="0"></mat-progress-bar>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+
 
