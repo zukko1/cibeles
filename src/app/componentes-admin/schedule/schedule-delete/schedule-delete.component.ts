@@ -1,28 +1,26 @@
 import {Component, Inject, OnInit} from '@angular/core';
+import {ScheduleEditComponent} from '../schedule-edit/schedule-edit.component';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {ScheduleService} from '../../../_services/schedule/schedule.service';
-import {User} from '../../../_models/user';
-import {Schedule} from '../../../_models/_entity-models/schedule';
-import {MessageService} from '../../../_services/messages/message.service';
 import {FormControl, Validators} from '@angular/forms';
+import {ScheduleService} from '../../../_services/schedule/schedule.service';
+import {MessageService} from '../../../_services/messages/message.service';
 
 @Component({
-  selector: 'app-schedule-add',
-  templateUrl: './schedule-add.component.html',
-  styleUrls: ['./schedule-add.component.css']
+  selector: 'app-schedule-delete',
+  templateUrl: './schedule-delete.component.html',
+  styleUrls: ['./schedule-delete.component.css']
 })
-export class ScheduleAddComponent {
+export class ScheduleDeleteComponent {
 
   formControl = new FormControl('', [
     Validators.required
     // Validators.email,
   ]);
 
-  constructor(public dialogRef: MatDialogRef<ScheduleEditComponent>,
-              @Inject(MAT_DIALOG_DATA) public schedule: Schedule,
+  constructor(public dialogRef: MatDialogRef<ScheduleDeleteComponent>,
+              @Inject(MAT_DIALOG_DATA) public data,
               private scheduleService: ScheduleService,
               public messageService: MessageService) {
-
   }
 
   onNoClick(): void {
@@ -36,15 +34,14 @@ export class ScheduleAddComponent {
   }
 
   public confirmAdd() {
-    this.scheduleService.Save(this.schedule).subscribe(
+    this.scheduleService.Delete(this.data.schedule.id).subscribe(
       result => {
-        this.messageService.success('Itinerario creado');
-        this.dialogRef.close(result.id);
+        this.messageService.success('Itinerario eliminado');
+        this.dialogRef.close(true);
       }, error => {
         this.messageService.error('Intentelo nuevamente');
       }
     );
-
   }
 
 }

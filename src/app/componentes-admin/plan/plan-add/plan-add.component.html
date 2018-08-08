@@ -32,8 +32,13 @@
               </mat-card-header>
               <mat-card-content>
                 <div class="container" fxLayout="column">
-                  <input type="file" placeholder="Subir imagen..." (change)="fileChangeEventImage($event)"/>
-                  <mat-progress-bar mode="determinate" value="0"></mat-progress-bar>
+                  <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+
+                  <button type="button"
+                          (click)="uploader.uploadAll()"
+                          [disabled]="!uploader.getNotUploadedItems().length" >
+                    Upload an Image
+                  </button>
                 </div>
               </mat-card-content>
             </mat-card>
@@ -53,13 +58,13 @@
             <mat-card>
               <div class="container" fxLayout="column">
                 <mat-selection-list #shoes>
-                  <mat-list-option *ngFor="let shoe of typesOfShoes">
+                  <mat-list-option *ngFor="let service of services">
                     <div fxLayout="row" fxFlexOffset="1%">
                       <div class="tr-icon">
-                        <img src="../../../../assets/img/wifi.svg">
+                        <img src="{{media + service.icoName}}">
                       </div>
                       <div class="vertical-centered-text" fxFlexOffset="5%">
-                        {{shoe}}
+                        {{service.name}}
                       </div>
                     </div>
                   </mat-list-option>
@@ -81,7 +86,8 @@
               <mat-card>
                 <div class="container" fxLayout="column">
                   <mat-form-field>
-                    <mat-select placeholder="Itinerarios Existentes"  [ngModel]="selectedSchedule"  (ngModelChange)="selectOrigen($event)">
+                    <mat-select placeholder="Itinerarios Existentes" [ngModel]="selectedSchedule"
+                                (ngModelChange)="selectOrigen($event)">
                       <mat-option *ngFor="let schedule of schedules" [value]="schedule.id">
                         {{schedule.name}}
                       </mat-option>
@@ -89,8 +95,8 @@
                   </mat-form-field>
                   <div fxLayout="row">
                     <button mat-fab fxFlexOffset="5%" (click)="openDialogAddSchedule()" color="primary">Nuevo</button>
-                    <button mat-fab fxFlexOffset="5%" color="basic">Editar</button>
-                    <button mat-fab fxFlexOffset="5%" color="warn">Eliminar</button>
+                    <button mat-fab fxFlexOffset="5%" (click)="openDialogEditSchedule()" color="basic">Editar</button>
+                    <button mat-fab fxFlexOffset="5%" (click)="openDialogDeleteSchedule()"color="warn">Eliminar</button>
                   </div>
                 </div>
               </mat-card>
@@ -99,28 +105,28 @@
               <mat-card>
                 <div class="container" fxLayout="column">
                   <div class="example-container mat-elevation-z8">
-                    <div class="example-loading-shade" *ngIf="dataSource.loading$ | async">
-                      <mat-spinner *ngIf="dataSource.loading$ | async"></mat-spinner>
+                    <div class="example-loading-shade" *ngIf="dataDaySource.loading$ | async">
+                      <mat-spinner *ngIf="dataDaySource.loading$ | async"></mat-spinner>
                     </div>
                     <div class="example-table-container">
-                      <table mat-table [dataSource]="dataSource" class="example-table">
+                      <table mat-table [dataSource]="dataDaySource" class="example-table">
                         <ng-container matColumnDef="name">
                           <th mat-header-cell *matHeaderCellDef>Nombre del dia</th>
                           <td mat-cell *matCellDef="let element"> {{element.name}}</td>
                         </ng-container>
                         <ng-container matColumnDef="actions">
                           <th mat-header-cell *matHeaderCellDef class="mat-actions-ter4">
-                            <button mat-raised-button color="primary" >
+                            <button mat-raised-button color="primary" (click)="openDialogAddDay()">
                               Nuevo
                             </button>
                           </th>
                           <td mat-cell *matCellDef="let element; let i=index;" class="mat-actions-ter4">
                             <button mat-icon-button color="accent">
-                              <mat-icon aria-label="Edit">edit</mat-icon>
+                              <mat-icon aria-label="Edit" (click)="openDialogEditDay(element.id)">edit</mat-icon>
                             </button>
 
                             <button mat-icon-button color="accent">
-                              <mat-icon aria-label="Delete">delete</mat-icon>
+                              <mat-icon aria-label="Delete" (click)="openDialogDeleteDay(element.id)">delete</mat-icon>
                             </button>
                           </td>
                         </ng-container>

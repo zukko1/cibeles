@@ -1,17 +1,16 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {ScheduleService} from '../../../_services/schedule/schedule.service';
-import {User} from '../../../_models/user';
-import {Schedule} from '../../../_models/_entity-models/schedule';
-import {MessageService} from '../../../_services/messages/message.service';
 import {FormControl, Validators} from '@angular/forms';
+import {Schedule} from '../../../_models/_entity-models/schedule';
+import {ScheduleService} from '../../../_services/schedule/schedule.service';
+import {MessageService} from '../../../_services/messages/message.service';
 
 @Component({
-  selector: 'app-schedule-add',
-  templateUrl: './schedule-add.component.html',
-  styleUrls: ['./schedule-add.component.css']
+  selector: 'app-schedule-edit',
+  templateUrl: './schedule-edit.component.html',
+  styleUrls: ['./schedule-edit.component.css']
 })
-export class ScheduleAddComponent {
+export class ScheduleEditComponent {
 
   formControl = new FormControl('', [
     Validators.required
@@ -19,10 +18,9 @@ export class ScheduleAddComponent {
   ]);
 
   constructor(public dialogRef: MatDialogRef<ScheduleEditComponent>,
-              @Inject(MAT_DIALOG_DATA) public schedule: Schedule,
+              @Inject(MAT_DIALOG_DATA) public data,
               private scheduleService: ScheduleService,
               public messageService: MessageService) {
-
   }
 
   onNoClick(): void {
@@ -36,15 +34,13 @@ export class ScheduleAddComponent {
   }
 
   public confirmAdd() {
-    this.scheduleService.Save(this.schedule).subscribe(
+    this.scheduleService.Update(this.data.schedule, this.data.schedule.id).subscribe(
       result => {
-        this.messageService.success('Itinerario creado');
+        this.messageService.success('Itinerario editado');
         this.dialogRef.close(result.id);
       }, error => {
         this.messageService.error('Intentelo nuevamente');
       }
     );
-
   }
-
 }

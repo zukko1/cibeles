@@ -1,28 +1,25 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {ScheduleService} from '../../../_services/schedule/schedule.service';
-import {User} from '../../../_models/user';
-import {Schedule} from '../../../_models/_entity-models/schedule';
 import {MessageService} from '../../../_services/messages/message.service';
+import {DayService} from '../../../_services/day/day.service';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormControl, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'app-schedule-add',
-  templateUrl: './schedule-add.component.html',
-  styleUrls: ['./schedule-add.component.css']
+  selector: 'app-day-edit',
+  templateUrl: './day-edit.component.html',
+  styleUrls: ['./day-edit.component.css']
 })
-export class ScheduleAddComponent {
+export class DayEditComponent implements OnInit {
 
   formControl = new FormControl('', [
     Validators.required
     // Validators.email,
   ]);
 
-  constructor(public dialogRef: MatDialogRef<ScheduleEditComponent>,
-              @Inject(MAT_DIALOG_DATA) public schedule: Schedule,
-              private scheduleService: ScheduleService,
+  constructor(public dialogRef: MatDialogRef<DayEditComponent>,
+              @Inject(MAT_DIALOG_DATA) public data,
+              private dayService: DayService,
               public messageService: MessageService) {
-
   }
 
   onNoClick(): void {
@@ -36,15 +33,14 @@ export class ScheduleAddComponent {
   }
 
   public confirmAdd() {
-    this.scheduleService.Save(this.schedule).subscribe(
+    this.dayService.Update(this.data.day, this.data.day.id).subscribe(
       result => {
-        this.messageService.success('Itinerario creado');
+        this.messageService.success('Dia editado');
         this.dialogRef.close(result.id);
       }, error => {
         this.messageService.error('Intentelo nuevamente');
       }
     );
-
   }
 
 }
