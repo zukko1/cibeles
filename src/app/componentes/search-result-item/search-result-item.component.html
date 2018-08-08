@@ -1,4 +1,4 @@
-<img src="../../../assets/img/cuidad-de-panama.jpg" alt="panama" title="Cuidad de Panamá">
+<img [src]="printImage(travel.plan.imgPpalName)" alt="{{travel.plan.name}}" title="{{travel.plan.name}}">
 <div class="tr-info-rst-bus">
     <h2>{{travel.plan.name}}</h2>
     <span>Durante {{getDays(travel.stardDate, travel.finishDate)}} días</span>
@@ -8,21 +8,17 @@
         <b>Fecha de llegada al hotel:</b> {{getDate(travel.stardDate)}}<br/>
         <b>Fecha de salida del hotel:</b> {{getDate(travel.finishDate)}}<br/>
     </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta mauris vitae tellus pretium, in faucibus enim blandit. Suspendisse quis sem ut velit sagittis vulputate. Donec rhoncus efficitur mi, id efficitur sem scelerisque vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse luctus ipsum non imperdiet rutrum. Curabitur cursus est ac tortor ultricies bibendum.</p>
+    <p>{{travel.plan.description}}</p>
     <div class="tr-cont-icons">
-        <div class="tr-icon"><img src="../../../assets/img/wifi.svg" alt=""></div>
-        <div class="tr-icon"><img src="../../../assets/img/cutlery.svg" alt=""></div>
-        <div class="tr-icon"><img src="../../../assets/img/swimming-pool.svg" alt=""></div>
-        <div class="tr-icon"><img src="../../../assets/img/room-service.svg" alt=""></div>
-        <div class="tr-icon"><img src="../../../assets/img/martini.svg" alt=""></div>
+        <div class="tr-icon" *ngFor="let ico of travel.plan.includeServicesIco"><img [src]="printImage(ico)" alt="ico"></div>
     </div>
 </div>
 <div class="tr-valores">
     <span>DESDE</span>
     <h3>{{travel.basePrice | currency:'$':'symbol': '0.0-0'}}</h3>
-    <div class="tr-estado">
+    <!-- <div class="tr-estado">
         <span class="tr-disponible">DISPONIBLE</span>
         <a class="tr-btn tr-verde" href="#">RESERVAR</a>
-    </div>
+    </div> -->
     <a class="tr-btn tr-azul" (click)="seeMore(travel.id)">VER MÁS DETALLE</a>
 </div>

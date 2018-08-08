@@ -78,6 +78,7 @@ import { UserController } from './_controllers/user.controller';
 import { SearchBarController } from './_controllers/search-bar.controller';
 import { TravelController } from './_controllers/travel.controller';
 import { ScheduleController } from './_controllers/schedule.controller';
+import { MediaObjectController } from './_controllers/media-object.controller';
 
 /**
  * Configuration imports
@@ -173,7 +174,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     ScheduleService,
     ScheduleController,
     ServiceService,
-    MediaObjectService
+    MediaObjectService,
+    MediaObjectController
   ],
   bootstrap: [AppComponent]
 })

@@ -7,4 +7,8 @@ export interface Plan extends ModelBase{
     name : string;
     description : string;
     travels : Travel[];
+    imgPpal : string;
+    multimedia : string[];
+    multimediaNames : string[];
+    imgPpalName : string;
 }

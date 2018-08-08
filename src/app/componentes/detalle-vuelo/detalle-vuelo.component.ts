@@ -12,6 +12,8 @@ import { ScheduleController } from '../../_controllers/schedule.controller';
 import { Schedule } from '../../_models/_entity-models/schedule';
 import { SearchBarController } from '../../_controllers/search-bar.controller';
 import { Utils } from '../../_common/util';
+import { MediaObjectController } from '../../_controllers/media-object.controller';
+import { MessageService } from '../../_services/messages/message.service';
 
 @Component({
   selector: 'app-detalle-vuelo',
@@ -36,7 +38,9 @@ export class DetalleVueloComponent implements OnInit {
     public placeServices : PlacesService,
     public travelDates : TravelDateService,
     public scheduleController : ScheduleController,
-    public searchBar : SearchBarController
+    public searchBar : SearchBarController,
+    public mediaObjectController : MediaObjectController,
+    public messageService : MessageService
   ) { }
 
   ngOnInit() {
@@ -45,6 +49,7 @@ export class DetalleVueloComponent implements OnInit {
       this.setUpTravelInfo(travel);
       this.travel = travel;
     });
+    this.messageService.success("Iniciando carga de información...");
   }
 
   setUpTravelInfo(travel : Travel){    
@@ -52,6 +57,7 @@ export class DetalleVueloComponent implements OnInit {
       schedule =>{
         this.schedule = schedule;
         this.scheduleSubject.unsubscribe();
+        this.messageService.success("Carga Completada!");
       }
     )    
     this.scheduleController.GetScheduleById(travel.plan.idSchedule.toString(), this.scheduleSubject);
@@ -81,5 +87,9 @@ export class DetalleVueloComponent implements OnInit {
   getDate(dateStr :string){
       let date = new Date(dateStr);
       return date.toLocaleDateString();
+  }
+
+  printImage(name : string){
+    return this.mediaObjectController.GetMediaObjectUrlByName(name);
   }
 }
