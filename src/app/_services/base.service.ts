@@ -43,6 +43,13 @@ export abstract class ServiceBase<M> {
     );
   }
 
+  public GetListWithoutPaginator() {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.get<ResponseList<M>>(
+      this.PathBase + this.getModel(),
+    );
+  }
+
   /**
    * @method  GetEntityById Retorna la información de la entidad de la BD dada una identificación
    * @param entity string que pide la identificación de la entidad que quiere ser consultada.

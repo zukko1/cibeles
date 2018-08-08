@@ -18,7 +18,7 @@ import {AuthGuard} from './_guards';
 * External imports
 */
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { SlickModule } from 'ngx-slick';
+import {SlickModule} from 'ngx-slick';
 
 
 /**
@@ -62,18 +62,6 @@ import {DetalleVueloComponent} from './componentes/detalle-vuelo/detalle-vuelo.c
  Services
  */
 
-import { UsersService } from './_services/users/users.service';
-import { SearchBarService } from './_services/search-bar/search-bar.service';
-import { MessageService } from './_services/messages/message.service';
-import { PlansService } from './_services/plans/plans.service';
-import { TravelService } from './_services/travel/travel.service';
-import { PlacesService } from './_services/places/places.service';
-import { TravelRoutesService } from './_services/travel-routes/travel-routes.service';
-import { TravelDateService } from './_services/travel-date/travel-date.service';
-import { ScheduleService  } from './_services/schedule/schedule.service';
-import { MediaObjectService } from './_services/media-object/media-object.service';
-import { ServiceService } from './_services/service/service.service';
-
 import {UsersService} from './_services/users/users.service';
 import {SearchBarService} from './_services/search-bar/search-bar.service';
 import {MessageService} from './_services/messages/message.service';
@@ -83,39 +71,44 @@ import {PlacesService} from './_services/places/places.service';
 import {TravelRoutesService} from './_services/travel-routes/travel-routes.service';
 import {TravelDateService} from './_services/travel-date/travel-date.service';
 import {ScheduleService} from './_services/schedule/schedule.service';
+import {MediaObjectService} from './_services/media-object/media-object.service';
+import {ServiceService} from './_services/service/service.service';
+
+
 /**
  * Controllers
  */
 
-import { UserController } from './_controllers/user.controller';
-import { SearchBarController } from './_controllers/search-bar.controller';
-import { TravelController } from './_controllers/travel.controller';
-import { ScheduleController } from './_controllers/schedule.controller';
+import {UserController} from './_controllers/user.controller';
+import {SearchBarController} from './_controllers/search-bar.controller';
+import {TravelController} from './_controllers/travel.controller';
+import {ScheduleController} from './_controllers/schedule.controller';
 
 /**
  * Configuration imports
  */
-import { RoutingModule } from '../modules/routing.modules';
-import { JwtInterceptor } from './_interceptors/jwt.interceptor';
-import { ErrorInterceptor } from './_interceptors/error.interceptor';
-import { Ter4BtnPrincipalDirective } from './directives/ter4-btn-principal/ter4-btn-principal.directive';
-import { IndexComponent } from './componentes/index/index.component';
-import { SearchResultComponent } from './componentes/search-result/search-result.component';
-import { SearchResultItemComponent } from './componentes/search-result-item/search-result-item.component';
-import { ContactUsComponent } from './componentes/contact-us/contact-us.component';
-import { SearchBarInternalComponent } from './componentes/search-bar-internal/search-bar-internal.component';
-import { LayoutMenuComponent } from './componentes/layout-menu/layout-menu.component';
-import { SearchBarIndexComponent } from './componentes/search-bar-index/search-bar-index.component';
-import { RoomsSelectorComponent } from './controls/rooms-selector/rooms-selector.component';
-import { PlanesComponent } from './componentes/planes/planes.component';
-import { LoginComponent } from './componentes/login/login.component';
-import { AboutComponent } from './componentes/about/about.component';
-import { TravelDatesPickerComponent } from './controls/travel-dates-picker/travel-dates-picker.component';
-import { HomeComponent } from './componentes-admin/home/home.component';
-import { PlanListComponent  } from './componentes-admin/plan/plan-list/plan-list.component';
+import {RoutingModule} from '../modules/routing.modules';
+import {JwtInterceptor} from './_interceptors/jwt.interceptor';
+import {ErrorInterceptor} from './_interceptors/error.interceptor';
+import {Ter4BtnPrincipalDirective} from './directives/ter4-btn-principal/ter4-btn-principal.directive';
+import {IndexComponent} from './componentes/index/index.component';
+import {SearchResultComponent} from './componentes/search-result/search-result.component';
+import {SearchResultItemComponent} from './componentes/search-result-item/search-result-item.component';
+import {ContactUsComponent} from './componentes/contact-us/contact-us.component';
+import {SearchBarInternalComponent} from './componentes/search-bar-internal/search-bar-internal.component';
+import {LayoutMenuComponent} from './componentes/layout-menu/layout-menu.component';
+import {SearchBarIndexComponent} from './componentes/search-bar-index/search-bar-index.component';
+import {RoomsSelectorComponent} from './controls/rooms-selector/rooms-selector.component';
+import {PlanesComponent} from './componentes/planes/planes.component';
+import {LoginComponent} from './componentes/login/login.component';
+import {AboutComponent} from './componentes/about/about.component';
+import {TravelDatesPickerComponent} from './controls/travel-dates-picker/travel-dates-picker.component';
+import {HomeComponent} from './componentes-admin/home/home.component';
+import {PlanListComponent} from './componentes-admin/plan/plan-list/plan-list.component';
 import {PlanAddComponent} from './componentes-admin/plan/plan-add/plan-add.component';
-import { TravelItemComponent } from './componentes/travel-item/travel-item.component';
-import { FooterComponent } from './componentes/footer/footer.component';
+import {TravelItemComponent} from './componentes/travel-item/travel-item.component';
+import {FooterComponent} from './componentes/footer/footer.component';
+import {ScheduleAddComponent} from './componentes-admin/schedule/schedule-add/schedule-add.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +134,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     PlanListComponent,
     PlanAddComponent,
     TravelItemComponent,
-    FooterComponent
+    FooterComponent,
+    ScheduleAddComponent
   ],
   imports: [
     HttpModule,
@@ -174,6 +168,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
     MatTableModule,
     MatProgressBarModule,
     MatSelectModule
+  ],
+  entryComponents: [
+    ScheduleAddComponent
   ],
   providers: [
     UsersService,
