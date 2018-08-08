@@ -19,6 +19,7 @@ import { AuthGuard } from './_guards';
  */
 import { SlickModule } from 'ngx-slick';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 /**
  * Material imports
@@ -108,6 +109,11 @@ import { PlanAddComponent  } from './componentes-admin/plan/plan-add/plan-add.co
 import { ScheduleAddComponent  } from './componentes-admin/schedule/schedule-add/schedule-add.component';
 import { TravelItemComponent } from './componentes/travel-item/travel-item.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { ScheduleEditComponent } from './componentes-admin/schedule/schedule-edit/schedule-edit.component';
+import { ScheduleDeleteComponent } from './componentes-admin/schedule/schedule-delete/schedule-delete.component';
+import { DayAddComponent } from './componentes-admin/day/day-add/day-add.component';
+import { DayEditComponent } from './componentes-admin/day/day-edit/day-edit.component';
+import { DayDeleteComponent } from './componentes-admin/day/day-delete/day-delete.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +140,13 @@ import { FooterComponent } from './componentes/footer/footer.component';
     PlanListComponent,
     TravelItemComponent,
     FooterComponent,
-    ScheduleAddComponent
+    ScheduleAddComponent,
+    ScheduleEditComponent,
+    ScheduleDeleteComponent,
+    DayAddComponent,
+    DayEditComponent,
+    DayDeleteComponent,
+    FileSelectDirective
   ],
   imports: [
     HttpModule,
@@ -166,10 +178,14 @@ import { FooterComponent } from './componentes/footer/footer.component';
     SlickModule.forRoot(),
     MatProgressBarModule,
     MatSelectModule
-
   ],
   entryComponents: [
-    ScheduleAddComponent
+    ScheduleAddComponent,
+    ScheduleEditComponent,
+    ScheduleDeleteComponent,
+    DayAddComponent,
+    DayEditComponent,
+    DayDeleteComponent
   ],
   providers: [
     UsersService,
