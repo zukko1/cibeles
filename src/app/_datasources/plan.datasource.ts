@@ -51,13 +51,11 @@ export class PlanDataSource implements DataSource<Plan> {
           this.lengthSubject.next(this.list['hydra:totalItems']);
         }
       );
-
   }
-
 
   loadPage(url) {
     this.loadingSubject.next(true);
-    this.planService.getCollection(url)
+    this.planService.GetEntityByIdStanard<ResponseList<Plan>>(url)
       .pipe(
         finalize(() => this.loadingSubject.next(false))
       )

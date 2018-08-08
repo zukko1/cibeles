@@ -1,6 +1,6 @@
 
-<section class="tr-resultados-busqueda internal-container" *ngIf="travels">
-    <div class="center-container" >
+<section class="tr-resultados-busqueda internal-container">
+    <div class="center-container"  *ngIf="travels">
         <div class="tr-resultados" *ngFor="let travel of travels">
             <app-search-result-item  [travel] = "travel"></app-search-result-item> 
         </div>

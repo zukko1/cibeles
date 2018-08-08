@@ -23,14 +23,15 @@ export class SearchResultItemComponent implements OnInit {
 
   getDays(date, date2){
     return Utils.getDays(date2, date);
-}
-  getDate(dateStr :string){
-      let date = new Date(dateStr);
-      return date.toLocaleDateString();
   }
 
   seeMore(id : string){
     this.router.navigateByUrl(Urls.DETALLE_VUELO + '/' + id);
+  }
+
+  getDate(dateStr :string){
+      let date = new Date(dateStr);
+      return date.toLocaleDateString();
   }
 
   public printImage(name : string){

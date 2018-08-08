@@ -72,6 +72,7 @@ import { TravelDateService } from './_services/travel-date/travel-date.service';
 import { ScheduleService  } from './_services/schedule/schedule.service';
 import { MediaObjectService } from './_services/media-object/media-object.service';
 import { ServiceService } from './_services/service/service.service';
+import { HotelService } from './_services/hotels/hotel.service';
 
 /**
  * Controllers
@@ -108,6 +109,7 @@ import { PlanAddComponent  } from './componentes-admin/plan/plan-add/plan-add.co
 import { ScheduleAddComponent  } from './componentes-admin/schedule/schedule-add/schedule-add.component';
 import { TravelItemComponent } from './componentes/travel-item/travel-item.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { TravelComponent } from './componentes-admin/travel/travel.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +136,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     PlanListComponent,
     TravelItemComponent,
     FooterComponent,
-    ScheduleAddComponent
+    ScheduleAddComponent,
+    TravelComponent
   ],
   imports: [
     HttpModule,
@@ -189,7 +192,9 @@ import { FooterComponent } from './componentes/footer/footer.component';
     ScheduleService,
     ScheduleController,
     ServiceService,
-    MediaObjectService
+    MediaObjectService,
+    MediaObjectController,
+    HotelService
   ],
   bootstrap: [AppComponent]
 })

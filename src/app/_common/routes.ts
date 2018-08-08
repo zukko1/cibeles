@@ -16,6 +16,8 @@ export class Urls {
     public static HOME: string = Urls.ADMINISTRATOR + '/home';
     public static PLAN: string = Urls.ADMINISTRATOR + '/plan';
     public static PLAN_ADD: string = Urls.PLAN + '/nuevo';
+    public static TRAVELS: string = Urls.ADMINISTRATOR + '/viajes';
+
 
 
 }

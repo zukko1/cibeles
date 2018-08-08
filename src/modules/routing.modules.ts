@@ -14,6 +14,7 @@ import {HomeComponent} from '../app/componentes-admin/home/home.component';
 import {AuthGuard} from '../app/_guards/auth.guard';
 import {PlanListComponent} from '../app/componentes-admin/plan/plan-list/plan-list.component';
 import {PlanAddComponent} from '../app/componentes-admin/plan/plan-add/plan-add.component';
+import { TravelComponent } from '../app/componentes-admin/travel/travel.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
           {
             path: 'plan/nuevo',
             component: PlanAddComponent
+          },
+          {
+            path: 'viajes',
+            component: TravelComponent
           }
         ]
       }

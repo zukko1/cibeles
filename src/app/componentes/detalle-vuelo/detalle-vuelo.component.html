@@ -51,6 +51,8 @@
                 </div>
             </li>
         </ul>
-        
+        <div class="example-loading-shade" *ngIf="!schedule">
+            <mat-spinner *ngIf="!schedule"></mat-spinner>
+        </div>
     </div>
 </section>

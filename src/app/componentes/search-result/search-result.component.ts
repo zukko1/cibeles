@@ -17,11 +17,14 @@ export class SearchResultComponent implements OnInit{
     
     public travels : Travel[] = [];
 
+    public loading = true;
+
     constructor(){
 
     }
 
     ngOnInit(): void {
+        this.loading = true;
         console.log("Init result");
         console.log(CacheHelper.GetFilteredTrips());
         let filteredTrips = CacheHelper.GetFilteredTrips();
@@ -29,6 +32,7 @@ export class SearchResultComponent implements OnInit{
             this.travels.push(filteredTrips[i]);
         }
         console.log(this.travels);
+        this.loading = false;
     }
 
     getDays(date, date2){

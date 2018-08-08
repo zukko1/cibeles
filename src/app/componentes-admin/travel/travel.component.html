@@ -1,0 +1,84 @@
+<div class="container" fxLayout="column">
+  <div class="container" fxFlexOffset="1%">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h2>Creación de viajes</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row wrap">
+            <div fxFlex="100%">
+              <mat-card>
+                <div class="container" fxLayout="column">
+                  <mat-form-field>
+                    <mat-select placeholder="Hotel"  [ngModel]="travel.idHotel" (ngModelChange)="selectOrigen($event)">
+                      <mat-option *ngFor="let schedule of hotels" [value]="schedule.id">
+                        {{schedule.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-select placeholder="Plan"  [ngModel]="travel.idPlan" (ngModelChange)="selectOrigen($event)">
+                      <mat-option *ngFor="let schedule of planes" [value]="schedule.id">
+                        {{schedule.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-select placeholder="Salidas"  [ngModel]="travel.idTravelDates" (ngModelChange)="selectOrigen($event)">
+                      <mat-option *ngFor="let schedule of dates" [value]="schedule.id">
+                        {{schedule.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <textarea matInput placeholder="Precio Base" [ngModel]="travel.basePrice"></textarea>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-select placeholder="Tipo de salida"  [ngModel]="travel.category"  (ngModelChange)="selectOrigen($event)">
+                      <mat-option *ngFor="let transp of transport" [value]="transp">
+                        {{schedule.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-select placeholder="Tipo de salida"  [ngModel]="travel.category"  (ngModelChange)="selectOrigen($event)">
+                      <mat-option value="TravelType.GruopOut">
+                        Salida grupal
+                      </mat-option>
+                      <mat-option value="TravelType.GroupFlyOut">
+                        Salida grupal aérea
+                      </mat-option>
+                      <mat-option value="TravelType.AloneOut">
+                        Salida individual
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-selection-list #shoes>
+                    <mat-list-option >
+                      <div fxLayout="row" fxFlexOffset="1%">
+                        <div class="tr-icon">
+                          <img src="../../../../assets/img/star-icon.png">
+                        </div>
+                        <div class="vertical-centered-text" fxFlexOffset="5%">
+                          Oferta Destacada
+                        </div>
+                      </div>
+                    </mat-list-option>
+                  </mat-selection-list>
+                </div>
+              </mat-card>
+              <button mat-button [disabled]="" (click)="confirmAdd()">
+                Guardar
+              </button>
+              <button mat-button (click)="onNoClick()" tabindex="-1">Cancelar</button>
+            </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+  
+  
+  
+  
+  

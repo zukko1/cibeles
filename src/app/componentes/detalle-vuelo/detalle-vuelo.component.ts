@@ -49,7 +49,6 @@ export class DetalleVueloComponent implements OnInit {
       this.setUpTravelInfo(travel);
       this.travel = travel;
     });
-    this.messageService.success("Iniciando carga de información...");
   }
 
   setUpTravelInfo(travel : Travel){    
@@ -57,7 +56,6 @@ export class DetalleVueloComponent implements OnInit {
       schedule =>{
         this.schedule = schedule;
         this.scheduleSubject.unsubscribe();
-        this.messageService.success("Carga Completada!");
       }
     )    
     this.scheduleController.GetScheduleById(travel.plan.idSchedule.toString(), this.scheduleSubject);

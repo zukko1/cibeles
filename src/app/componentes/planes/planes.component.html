@@ -6,7 +6,7 @@
         <div class="tr-cont-tit-cat">
             <h2>SALIDAS GRUPALES</h2>
         </div>
-        <ul class="salidas-items col-100">
+        <ul class="salidas-items plain-active col-100 ">
             <li class="col-25" *ngFor="let travel of groupTravels">
                 <travel-item [travel]="travel"></travel-item>
             </li>
@@ -39,5 +39,8 @@
     <div class="col-100 plains-content">
         <div class="center-container">
         </div>
+    </div>
+    <div class="example-loading-shade" *ngIf="!groupTravels || !groupFlyTravels || !aloneTravels">
+        <mat-spinner *ngIf="!groupTravels || !groupFlyTravels || !aloneTravels"></mat-spinner>
     </div>
 </section>

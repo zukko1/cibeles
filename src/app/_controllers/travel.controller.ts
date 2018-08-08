@@ -6,6 +6,12 @@ import { TravelService } from "../_services/travel/travel.service";
 import { Observable, forkJoin, Subject } from "rxjs";
 import { Travel } from "../_models/_entity-models/travel";
 import { TravelType } from "../_common/enumeradores.enum";
+import { TavelDate } from "../_models/_entity-models/travelDate";
+import { TravelDateService } from "../_services/travel-date/travel-date.service";
+import { Plan } from "../_models/_entity-models/plan";
+import { PlansService } from "../_services/plans/plans.service";
+import { HotelService } from "../_services/hotels/hotel.service";
+import { Hotel } from "../_models/_entity-models/hotel";
 
 
 @Injectable()
@@ -21,7 +27,10 @@ export class TravelController implements OnInit{
     constructor(
         public messageService : MessageService,
         public router : Router,
-        public travelService : TravelService
+        public travelService : TravelService,
+        public travelDatesService : TravelDateService,
+        public planService : PlansService,
+        public hotelService : HotelService
     ) { 
         this.travels = [];
         this.loadTravels();
@@ -72,5 +81,33 @@ export class TravelController implements OnInit{
 
     public getTravelById(id : string){
         return this.travelService.GetEntityById(id);
+    }
+
+    public getDates(dates : TavelDate[]){
+        this.travelDatesService.GetList().subscribe(
+            datesResult =>{
+                dates = datesResult["hydra:member"];
+                console.log(dates);
+                
+            }
+        )
+    }
+
+    public getPlanes(planes : Plan[]){
+        this.planService.GetList().subscribe(
+            planesResult =>{
+                planes = planesResult["hydra:member"];
+                console.log(planes);
+            }
+        )
+    }
+
+    public getHotels(hotels : Hotel[]){
+        this.hotelService.GetList().subscribe(
+            hotelsResult =>{
+                hotels = hotelsResult["hydra:member"];
+                console.log(hotels);
+            }
+        )
     }
 }
