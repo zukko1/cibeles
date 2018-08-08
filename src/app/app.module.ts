@@ -13,6 +13,12 @@ import { Observable } from "rxjs";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './_guards';
 
+
+/***
+ * External Imports
+ */
+import { SlickModule } from 'ngx-slick';
+
 /**
  * Material imports
  */
@@ -61,6 +67,9 @@ import { PlacesService } from './_services/places/places.service';
 import { TravelRoutesService } from './_services/travel-routes/travel-routes.service';
 import { TravelDateService } from './_services/travel-date/travel-date.service';
 import { ScheduleService  } from './_services/schedule/schedule.service';
+import { MediaObjectService } from './_services/media-object/media-object.service';
+import { ServiceService } from './_services/service/service.service';
+
 /**
  * Controllers
  */
@@ -92,7 +101,7 @@ import { TravelDatesPickerComponent } from './controls/travel-dates-picker/trave
 import { HomeComponent } from './componentes-admin/home/home.component';
 import { PlanComponent  } from './componentes-admin/plan/plan.component';
 import { TravelItemComponent } from './componentes/travel-item/travel-item.component';
-
+import { FooterComponent } from './componentes/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -115,7 +124,8 @@ import { TravelItemComponent } from './componentes/travel-item/travel-item.compo
     TravelDatesPickerComponent,
     HomeComponent,
     PlanComponent,
-    TravelItemComponent
+    TravelItemComponent,
+    FooterComponent
   ],
   imports: [
     HttpModule,
@@ -142,7 +152,8 @@ import { TravelItemComponent } from './componentes/travel-item/travel-item.compo
     MatSortModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatTableModule
+    MatTableModule,
+    SlickModule.forRoot()
   ],
   providers: [
     UsersService,
@@ -160,7 +171,9 @@ import { TravelItemComponent } from './componentes/travel-item/travel-item.compo
     TravelDateService,
     TravelController,
     ScheduleService,
-    ScheduleController
+    ScheduleController,
+    ServiceService,
+    MediaObjectService
   ],
   bootstrap: [AppComponent]
 })

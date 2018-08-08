@@ -20,22 +20,6 @@
 
             <li class="col-25" *ngFor="let travel of groupTravels">
                 <travel-item [travel]="travel"></travel-item>
-                <!-- <div class="hover-item">
-                    <div>
-                        <h3 class="city"> {{travel.plan.name}} </h3>
-                        <span class="depto">Durante {{getDays(travel.stardDate, travel.finishDate)}} {{ getDays(travel.stardDate, travel.finishDate) > 1 ? "Días" : "Día"}}</span>
-                        <h3>desde</h3>
-                        <h3 class="price">{{travel.basePrice}}</h3>
-                        <a (click)="seeMore(travel.id)">Ver más</a>
-                    </div>
-                </div>
-                <div class="image-container">
-                    <img src="../../../assets/img/cartagena.jpg" alt="">
-                    <div class="info-item">
-                            <h3>{{travel.plan.name}}</h3>
-                            <span>{{travel.plan.travels.length}} opciones diferentes</span>
-                        </div>
-                </div> -->
             </li>
           
           <!-- <li class="col-25">
@@ -359,49 +343,5 @@
         </div>
   </section>
   <footer>
-      <div class="col-100 banner-footer">
-          <img src="../../../assets/img/imagen-imagen.jpg">
-      </div>
-      <div class="col-100 footer-container">
-          <div class="center-container">
-              <div class="col-50 left-footer">
-                  <span class="direccion">
-                          Carrera 74 No 48-37 CC. Obelisco  local 25  |  Calle 55 No. 78-64 Barrio los Colores, Medellín
-                  </span>
-                  <span class="telefono">
-                          (+57-4) 444 2628
-                  </span>
-                      <a href="mailto:info@cibelestours.com">info@cibelestours.com</a>
-                  <ul class="social-footer">
-                      <li><a href="#"><img src="../../../assets/img/facebook-blanco.svg" alt=""></a></li>
-                      <li><a href="#"><img src="../../../assets/img/twitter-blanco.svg" alt=""></a></li>
-                      <li><a href="#"><img src="../../../assets/img/instagram-blanco.svg" alt=""></a></li>
-                      <li><a href="#"><img src="../../../assets/img/whatsapp-blanco.svg" alt=""></a></li>
-                  </ul>
-                  
-              </div>
-              <div class="col-50 right-footer">
-                  <h3>suscribete a nuestro boletín</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget nisl erat. Etiam ullamcorper, nisi eu volutpat sagittis.</p>
-                  <div class="col-50">
-                      <input type="text" placeholder="Nombre completo">
-                  </div>
-                  <div class="col-50">
-                      <input type="email" placeholder="Correo electrónico">
-                  </div>
-                  <div class="col-50">
-                      <input type="checkbox" id="politica"><label for="politica"></label><a href="#">Acepto política de tratamiento de datos</a>
-                  </div>
-                  <div class="col-50">
-                      <button>Suscribirme ahora</button>
-                  </div>
-              </div>
-              <a  class="ter4" href="#">
-                  <span>
-                      Desarrollado por: TERA Company S.A.S.
-                  </span>
-                  <img src="../../../assets/img/ter4.svg">
-              </a>
-          </div>
-      </div>
+      <app-footer></app-footer>
   </footer>
