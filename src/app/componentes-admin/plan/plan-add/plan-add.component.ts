@@ -37,8 +37,6 @@ export class PlanAddComponent implements OnInit {
   schedule: Schedule;
   day: Day;
   media = environment.baseIP + environment.baseURL + environment.baseMediaUrl;
-  public uploader: FileUploader = new FileUploader({url: 'http://127.0.0.1:81/crmdestra_backsymfony/public/index.php/api/media_objects', itemAlias: 'file'});
-
 
   constructor(public plansService: PlansService,
               public daysService: DayService,
@@ -66,11 +64,6 @@ export class PlanAddComponent implements OnInit {
           this.services = restItems['hydra:member'];
         }
       );
-    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log('ImageUpload:uploaded:', item, status, response);
-      alert('File uploaded successfully');
-    };
   }
 
   openDialogAddSchedule(): void {
