@@ -70,6 +70,7 @@ input, select, textarea{
 	flex-wrap:  wrap;
     -ms-flex-pack: distribute;
 	justify-content: space-around;
+	z-index: 1;
 }
 
 .tr-cont-hab,

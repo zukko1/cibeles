@@ -3,6 +3,7 @@ import { Travel } from '../../_models/_entity-models/travel';
 import { Utils } from '../../_common/util';
 import { Urls } from '../../_common/routes';
 import { Router } from '@angular/router';
+import { MediaObjectController } from '../../_controllers/media-object.controller';
 
 @Component({
   selector: 'travel-item',
@@ -13,7 +14,8 @@ export class TravelItemComponent implements OnInit {
 
   @Input() travel : Travel;
   constructor(
-    public router : Router
+    public router : Router,
+    public mediaObjectController : MediaObjectController
   ) { }
 
   ngOnInit() {
@@ -27,4 +29,7 @@ export class TravelItemComponent implements OnInit {
     this.router.navigateByUrl(Urls.DETALLE_VUELO + '/' + id);
   }
 
+  public printImage(name : string){
+    return this.mediaObjectController.GetMediaObjectUrlByName(name);
+  }
 }

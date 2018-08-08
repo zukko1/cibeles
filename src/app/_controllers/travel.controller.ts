@@ -34,7 +34,7 @@ export class TravelController implements OnInit{
     public loadTravels(){        
         this.loadResources().subscribe(
             result => {
-                this.travels = result[0]['hydra:member'];
+                this.travels = result[0]['hydra:member'];                
                 this.starredSubject.next(this.loadStarredTravels());
                 this.groupFlySubject.next(this.loadGroupFlyTravels());
                 this.groupSubject.next(this.loadGroupTravels());

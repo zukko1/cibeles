@@ -8,7 +8,7 @@
   </div>
 </div>
 <div class="image-container">
-  <img src="../../../assets/img/cartagena.jpg" alt="">
+  <img [src]="printImage(travel.plan.imgPpalName)" alt="">
   <div class="info-item">
           <h3>{{travel.plan.name}}</h3>
           <span>{{travel.plan.travels.length}} opciones diferentes</span>
