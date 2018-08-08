@@ -18,6 +18,7 @@ import { AuthGuard } from './_guards';
  * External Imports
  */
 import { SlickModule } from 'ngx-slick';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 /**
  * Material imports
@@ -41,7 +42,9 @@ import {
   MatSortModule,
   MatTableModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatSelectModule
  } from '@angular/material';
 
 /**
@@ -100,9 +103,12 @@ import { LoginComponent } from './componentes/login/login.component';
 import { AboutComponent } from './componentes/about/about.component';
 import { TravelDatesPickerComponent } from './controls/travel-dates-picker/travel-dates-picker.component';
 import { HomeComponent } from './componentes-admin/home/home.component';
-import { PlanComponent  } from './componentes-admin/plan/plan.component';
+import { PlanListComponent  } from './componentes-admin/plan/plan-list/plan-list.component';
+import { PlanAddComponent  } from './componentes-admin/plan/plan-add/plan-add.component';
+import { ScheduleAddComponent  } from './componentes-admin/schedule/schedule-add/schedule-add.component';
 import { TravelItemComponent } from './componentes/travel-item/travel-item.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -124,9 +130,11 @@ import { FooterComponent } from './componentes/footer/footer.component';
     AboutComponent,
     TravelDatesPickerComponent,
     HomeComponent,
-    PlanComponent,
+    PlanAddComponent,
+    PlanListComponent,
     TravelItemComponent,
-    FooterComponent
+    FooterComponent,
+    ScheduleAddComponent
   ],
   imports: [
     HttpModule,
@@ -155,7 +163,13 @@ import { FooterComponent } from './componentes/footer/footer.component';
     MatNativeDateModule,
     MatDatepickerModule,
     MatTableModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    MatProgressBarModule,
+    MatSelectModule
+
+  ],
+  entryComponents: [
+    ScheduleAddComponent
   ],
   providers: [
     UsersService,
